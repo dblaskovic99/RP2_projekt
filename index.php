@@ -1,44 +1,30 @@
-
 <?php
 
+// Definiramo globalno vidljive constante:
+// __SITE_PATH = putanja na disku servera do index.php
+// __SITE_URL  = URL do index.php
+define( '__SITE_PATH', realpath( dirname( __FILE__ ) ) );
+define( '__SITE_URL', dirname( $_SERVER['PHP_SELF'] ) );
 
+// Započnemo/nastavimo session
+session_start();
 
-	if(!isset($_SESSION['username'])){
-    	session_start();
+// Inicijaliziraj aplikaciju (učitava bazne klase, autoload klasa iz modela).
+require_once 'app/init.php';
 
-    }
+// Stvori zajednički registry podataka u aplikaciji.
+$registry = new Registry();
 
-  // Provjeri je li postavljena varijabla rt; kopiraj ju u $route
-  if(isset( $_GET['rt'])){
-    $route = $_GET['rt'];
-  }
-  else{
+// Stvori novi router, spremi ga u registry.
+$registry->router = new Router($registry);
 
-    $route = 'login';
-  }
+// Javi routeru putanju gdje su spremljeni svi controlleri.
+$registry->router->setPath( __SITE_PATH . '/controller' );
 
+// Stvori novi template za prikaz view-a.
+$registry->template = new Template($registry);
 
-$parts = explode( '/', $route );
-
-$controllerName = $parts[0] . 'Controller';
-if( isset( $parts[1] ) )
-	$action = $parts[1];
-else
-	$action = 'index';
-
-
-
-// Controller $controllerName se nalazi poddirektoriju controller
-$controllerFileName = 'controller/' . $controllerName . '.php';
-
-
-// Includeaj tu datoteku
-require_once $controllerFileName;
-
-// Stvori pripadni kontroler
-$con = new $controllerName;
-
-// Pozovi odgovarajuću akciju
-$con->$action();
+// Učitaj controller pomoću routera.
+$registry->router->loader();
 
 ?>

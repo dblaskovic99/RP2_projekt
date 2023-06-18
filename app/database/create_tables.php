@@ -3,6 +3,7 @@
 
 require_once __DIR__ . '/db.class.php';
 
+create_table_trening();
 create_table_sport();
 create_table_klub();
 create_table_trener();
@@ -138,6 +139,47 @@ function create_table_sportas()
 
 	echo "Napravio tablicu sportas.<br />";
 }
+function create_table_trening()
+{
+	$db = DB::getConnection();
 
+	if( has_table( 'trening' ) )
+		exit( 'Tablica trener vec postoji. Obrisite ju pa probajte ponovno.' );
+
+	try
+	{
+		$st = $db->prepare( 
+			'CREATE TABLE IF NOT EXISTS trening (' .
+			'id_trening int NOT NULL PRIMARY KEY AUTO_INCREMENT,' .
+			'id_sportas int NOT NULL,' .
+			'vrsta varchar(50) NOT NULL,'.
+			'interval1 varchar(50) NOT NULL,' .
+			'rez_interval1 varchar(50),' .
+			'interval2 varchar(50),' .
+			'rez_interval2 varchar(50),' .
+			'interval3 varchar(50),' .
+			'rez_interval3 varchar(50),' .
+			'interval4 varchar(50),' .
+			'rez_interval4 varchar(50),' .
+			'interval5 varchar(50),' .
+			'rez_interval5 varchar(50),' .
+			'interval6 varchar(50),' .
+			'rez_interval6 varchar(50),' .
+			'interval7 varchar(50),' .
+			'rez_interval7 varchar(50),' .
+			'interval8 varchar(50),' .
+			'rez_interval8 varchar(50),' .
+			'interval9 varchar(50),' .
+			'rez_interval9 varchar(50),' .
+			'interval10 varchar(50),' .
+			'rez_interval10 varchar(50))' 
+		);
+
+		$st->execute();
+	}
+	catch( PDOException $e ) { exit( "PDO error [create trening]: " . $e->getMessage() ); }
+
+	echo "Napravio tablicu trening.<br />";
+}
 
 ?> 
