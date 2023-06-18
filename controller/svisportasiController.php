@@ -12,7 +12,7 @@ class SvisportasiController extends BaseController
 		$this->registry->template->title = 'Popis svih sportaša';
 		$this->registry->template->sportasList = $ls->getSviSportasi($_SESSION['id_trener']);
 
-        $this->registry->template->show( 'sportas_index' );
+        $this->registry->template->show( 'svisportasi_index' );
 	}
 }
 ?>

@@ -8,7 +8,7 @@
 			foreach( $sportasList as $sportas )
 			{
 				echo '<tr>' .
-                     '<td>' . $sportas->username . '</td>' .
+                     '<td> <a href="' . __SITE_URL .'/index.php?rt=sportas&username=' . $sportas->username . '">' . $sportas->username . '</td>' .
 				     '<td>' . $sportas->ime . '</td>' .
 				     '<td>' . $sportas->prezime . '</td>' .
                      '<td>' . $sportas->datum_rodenja . '</td>' .
