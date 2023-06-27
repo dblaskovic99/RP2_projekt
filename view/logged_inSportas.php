@@ -1,9 +1,10 @@
 <?php require_once __SITE_PATH . '/view/_headerSportas.php'; ?>
 
-<p>
-	Bravo, poštovani korisniče <?php echo $_SESSION['username']; ?>! Uspješno ste se ulogirali!
-</p>
-
+<div class="notification">
+	<p>Bravo <?php echo $_SESSION['username']; ?>!</p>
+	<br>
+	<p>Uspješno ste se ulogirali!</p>
+</div>
 
 
 <?php require_once __SITE_PATH . '/view/_footer.php'; ?>
