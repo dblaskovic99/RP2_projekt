@@ -1,4 +1,4 @@
-<?php require_once __SITE_PATH . '/view/_header.php'; ?>
+<?php require_once __SITE_PATH . '/view/_headerTrener.php'; ?>
 
 <p>
 	Bravo, poštovani korisniče <?php echo $_SESSION['username']; ?>! Uspješno ste se ulogirali!
