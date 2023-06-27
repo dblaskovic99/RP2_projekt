@@ -1,18 +1,22 @@
-<?php require_once __SITE_PATH . '/view/_header_pocetni.php'; ?>
+<?php 
+$activePage = 'loginSportas';
+require_once __SITE_PATH . '/view/_header_pocetni.php'; ?>
 
-<form method="post" action="<?php echo __SITE_URL . '/index.php?rt=loginSportas'?>">
-	Korisničko ime:
-	<input type="text" name="username" />
-	<br />
-	Lozinka:
-	<input type="password" name="password" />
-	<br />
-	<button type="submit">Ulogiraj se kao sportaš!</button>
-</form>
-
-
-
-
-
+<section class="login-section">
+	<div class="login-container">
+		<h1>Ulogirajte se kao sportaš</h1>
+		<form method="post" action="<?php echo __SITE_URL . '/index.php?rt=loginSportas'?>">
+			<div class="form-group">
+				<label for="username">Korisničko ime:</label>
+				<input type="text" id="username" name="username" />
+			</div>
+			<div class="form-group">
+				<label for="password">Lozinka:</label>
+				<input type="password" id="password" name="password" />
+			</div>
+			<button type="submit" class="submit-button">Ulogiraj se!</button>
+		</form>
+	</div>
+</section>
 
 <?php require_once __SITE_PATH . '/view/_footer.php'; ?>

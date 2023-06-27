@@ -1,16 +1,23 @@
-<?php require_once __SITE_PATH . '/view/_header_pocetni.php'; ?>
+<?php
+$activePage = 'loginTrener';
+require_once __SITE_PATH . '/view/_header_pocetni.php'; ?>
 
-<form method="post" action="<?php echo __SITE_URL . '/index.php?rt=loginTrener'?>">
-	Korisničko ime:
-	<input type="text" name="username" />
-	<br />
-	Lozinka:
-	<input type="password" name="password" />
-	<br />
-	<button type="submit">Ulogiraj se kao trener!</button>
-</form>
-
-
+<section class="login-section">
+	<div class="login-container">
+		<h1>Ulogirajte se kao trener</h1>
+		<form method="post" action="<?php echo __SITE_URL . '/index.php?rt=loginTrener'?>">
+			<div class="form-group">
+				<label for="username">Korisničko ime:</label>
+				<input type="text" id="username" name="username" />
+			</div>
+			<div class="form-group">
+				<label for="password">Lozinka:</label>
+				<input type="password" id="password" name="password" />
+			</div>
+			<button type="submit" class="submit-button">Ulogiraj se!</button>
+		</form>
+	</div>
+</section>
 
 
 
