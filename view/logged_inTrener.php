@@ -1,8 +1,10 @@
 <?php require_once __SITE_PATH . '/view/_headerTrener.php'; ?>
 
-<p>
-	Bravo, poštovani korisniče <?php echo $_SESSION['username']; ?>! Uspješno ste se ulogirali!
-</p>
+<div class="notification">
+	<p>Bravo <?php echo $_SESSION['username']; ?>!</p>
+	<br>
+	<p>Uspješno ste se ulogirali!</p>
+</div>
 
 
 

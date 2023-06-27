@@ -1,0 +1,199 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('rowing.jpg');
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    background-color: #47381B;
+    padding: 10px 0;
+    color: #fff;
+    text-align: center;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+  }
+  
+  #main-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-around;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+  }
+  
+  #main-menu ul li a {
+    display: block;
+    color: #47381B;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  
+  #main-menu ul li a:hover {
+    background-color: #47381B;
+    color: #fff;
+    transition: 0.3s;
+  }
+
+  #main-menu ul li a.active {
+    background-color: #F8B64B;
+    color: #47381B;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  .login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 20px;
+  }
+  
+  .login-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  }
+  
+  .login-container h1 {
+    text-align: center;
+    color: #47381B;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #47381B;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #F8B64B;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #F8B64B;
+  }
+  
+  .notification {
+    border: 1px solid #47381B;
+    background-color: #FFEAAB;
+    padding: 20px;
+    margin: 10px auto;
+    width: 20%;
+    text-align: center;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+    border-radius: 5px;
+}
+
+.trening-info {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+  width: 90%;
+  margin: 20px auto;
+}
+
+.trening-info table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.trening-info table, .trening-info table th, .trening-info table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.trening-info table th {
+  background-color: #F8B64B;
+  color: white;
+}
+
+.trening-info table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.trening-info table button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #F8B64B;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.trening-info table button:hover {
+  background-color: #F8B64B;
+}
+
+.athlete-list {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+  width: 90%;
+  margin: 20px auto;
+}
+
+.athlete-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.athlete-list table, .athlete-list table th, .athlete-list table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.athlete-list table th {
+  background-color: #F8B64B;
+  color: white;
+}
+
+.athlete-list table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.athlete-list table a {
+  color: #47381B;
+  text-decoration: none;
+}
+
+.athlete-list table a:hover {
+  color: #F8B64B;
+}
+
+

@@ -1,9 +1,9 @@
 <?php require_once __SITE_PATH . '/view/_headerSportas.php'; ?>
 
 
-	<h2>Popis neodrađenih treninga:</h2>
 	<div class="trening-info">
-	<table>
+		<h2>Popis neodrađenih treninga:</h2>
+		<table>
 			<tr><th>Vrsta</th><th>Ime</th><th> 1 </th><th> 2</th><th> 3</th><th> 4</th><th> 5</th><th> 6</th><th> 7</th><th> 8</th><th> 9</th><th> 10</th>
 			<?php 
 				foreach( $treningList as $trening )

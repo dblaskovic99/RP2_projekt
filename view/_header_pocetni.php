@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf8">
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="CSS/styles.css">
 	<title>Moj trening</title>
 </head>
 <body>
