@@ -16,7 +16,7 @@
 		<ul>
 	
 			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=svisportasiTrener">Popis sportaša</a></li>
-			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=treningTrener">Dodaj novi trening</a></li>
+			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=treningTrener">Dodaj novi trening!</a></li>
 
 			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=logout">Odjavi se</a></li>
 			

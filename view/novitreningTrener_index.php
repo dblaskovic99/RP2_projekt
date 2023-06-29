@@ -1,45 +1,58 @@
 
 <?php require_once __SITE_PATH . '/view/_headerTrener.php'; ?>
 
-<div class="training-form-container">
-	<form method="post" action="<?php echo __SITE_URL; ?>/index.php?rt=treningTrener">
-		<div class="form-group">
-			<label for="vrsta">Vrsta:</label>
-			<input type="text" id="vrsta" name="vrsta" />
-		</div>
-		<div class="form-group">
-			<label for="ime">Ime:</label>
-			<input type="text" id="ime" name="ime" />
-		</div>
-		<div class="form-group">
-			<label for="sportasi">Sportaši:</label>
-			<?php 
-				foreach( $sportasList as $sportas )
-				{
-					echo '<div class="checkbox-container"><label for="username[]">'.$sportas->username.'</label><input type="checkbox" name="username[]" value='.$sportas->username . '></div>';
-				}
-			?>
 
-		</div>
-		<div id="intervalContainer">
-			<div class="form-group interval-group">
-				<label for="interval1">Interval 1:</label>
-				<input type="text" id="interval1" name="interval[]" />
-			</div>
-		</div>
+<form method="post" action="<?php echo __SITE_URL; ?>/index.php?rt=treningTrener">
+	Vrsta:
+	<input type="text" name="vrsta" />
+	<br />
+	Ime:
+	<input type="text" name="ime" />
+	<br />
+	Sportaši:
+	<?php 
+			foreach( $sportasList as $sportas )
+			{
+				echo '<input type="checkbox" name="username[]" value='.$sportas->username . '>' . $sportas->username;
 
-		<div class="form-group">
-			<button type="button" id="addInterval">Dodaj Interval</button>
-			<button type="button" id="removeInterval">Ukloni Interval</button>
-		</div>
+			}
+		?>
+	<br>
 
-		<div class="form-group">
-			<button type="submit" class="submit-button">Dodaj trening!</button>
-		</div>
-	</form>
-</div>
+	Interval 1:
+	<input type="text" name="interval1" />
+	<br />
+	Interval 2:
+	<input type="text" name="interval2" />
+	<br />
+	Interval 3:
+	<input type="text" name="interval3" />
+	<br />
+	Interval 4:
+	<input type="text" name="interval4" />
+	<br />
+	Interval 5:
+	<input type="text" name="interval5" />
+	<br />
+	Interval 6:
+	<input type="text" name="interval6" />
+	<br />
+	Interval 7:
+	<input type="text" name="interval7" />
+	<br />
+	Interval 8:
+	<input type="text" name="interval8" />
+	<br />
+	Interval 9:
+	<input type="text" name="interval9" />
+	<br />
+	Interval 10:
+	<input type="text" name="interval10" />
+	<br />
+	
+	<button type="submit">Dodaj trening!</button>
+</form>
 
-<script src="view/novitreningTrener.js"></script>
+
 <?php require_once __SITE_PATH . '/view/_footer.php'; ?>
-
 

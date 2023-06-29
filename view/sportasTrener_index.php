@@ -15,37 +15,39 @@
 	</div>
 		
 	<div class="trening-info">
+	<h1>Zadnji odrađeni treninzi:</h1>
 	<table>
-			<tr><th>Vrsta</th><th>Ime</th><th> 1 </th><th>Rezultat 1</th><th> 2</th><th>Rezultat 2</th><th> 3</th><th>Rezultat 3</th><th> 4</th><th>Rezultat 4</th><th> 5</th><th>Rezultat 5</th><th> 6</th><th>Rezultat 6</th><th> 7</th><th>Rezultat 7</th><th> 8</th><th>Rezultat 8</th><th> 9</th><th>Rezultat 9</th><th> 10</th><th>Rezultat 10</th>
+			<tr><th>Vrsta</th><th>Ime</th><th> 1 </th><th>Rezultat 1</th><th> 2</th><th>Rezultat 2</th><th> 3</th><th>Rezultat 3</th><th> 4</th><th>Rezultat 4</th><th> 5</th><th>Rezultat 5</th><th> 6</th><th>Rezultat 6</th><th> 7</th><th>Rezultat 7</th><th> 8</th><th>Rezultat 8</th><th> 9</th><th>Rezultat 9</th><th> 10</th><th>Rezultat 10</th></tr>
 			<?php 
-				foreach( $treningList as $trening )
-				{
+
+				for($i=0; $i<Count($treningList); $i++){
 					echo '<tr>' .
-						'<td>' . $trening->vrsta . '</td>' .
-						'<td>' . $trening->ime . '</td>' .
-						'<td>' . $trening->interval1 . '</td>' .
-						'<td>' . $trening->rez_interval1 . '</td>' .
-						'<td>' . $trening->intreval2 . '</td>' .
-						'<td>' . $trening->rez_interval2 . '</td>' .
-						'<td>' . $trening->intreval3 . '</td>' .
-						'<td>' . $trening->rez_interval3 . '</td>' .
-						'<td>' . $trening->intreval4 . '</td>' .
-						'<td>' . $trening->rez_interval4 . '</td>' .
-						'<td>' . $trening->intreval5 . '</td>' .
-						'<td>' . $trening->rez_interval5 . '</td>' .
-						'<td>' . $trening->intreval6 . '</td>' .
-						'<td>' . $trening->rez_interval6 . '</td>' .
-						'<td>' . $trening->intreval7 . '</td>' .
-						'<td>' . $trening->rez_interval7 . '</td>' .
-						'<td>' . $trening->intreval8 . '</td>' .
-						'<td>' . $trening->rez_interval8 . '</td>' .
-						'<td>' . $trening->interval9 . '</td>' .
-						'<td>' . $trening->rez_interval9 . '</td>' .
-						'<td>' . $trening->intreval10 . '</td>' .
-						'<td>' . $trening->rez_interval10 . '</td>' .
-						
-						'</tr>';
+					'<td>' . $treningList[$i][2] . '</td>' .
+					'<td>' . $treningList[$i][3] . '</td>' .
+					'<td>' . $treningList[$i][5] . '</td>' .
+					'<td>' . $treningList[$i][6] . '</td>' .
+					'<td>' . $treningList[$i][7] . '</td>' .
+					'<td>' . $treningList[$i][8] . '</td>' .
+					'<td>' . $treningList[$i][9] . '</td>' .
+					'<td>' . $treningList[$i][10] . '</td>' .
+					'<td>' . $treningList[$i][11] . '</td>' .
+					'<td>' . $treningList[$i][12] . '</td>' .
+					'<td>' . $treningList[$i][13] . '</td>' .
+					'<td>' . $treningList[$i][14] . '</td>' .
+					'<td>' . $treningList[$i][15] . '</td>' .
+					'<td>' . $treningList[$i][16] . '</td>' .
+					'<td>' . $treningList[$i][17] . '</td>' .
+					'<td>' . $treningList[$i][18] . '</td>' .
+					'<td>' . $treningList[$i][19] . '</td>' .
+					'<td>' . $treningList[$i][20] . '</td>' .
+					'<td>' . $treningList[$i][21] . '</td>' .
+					'<td>' . $treningList[$i][22] . '</td>' .
+					'<td>' . $treningList[$i][23] . '</td>' .
+					'<td>' . $treningList[$i][24] . '</td>' .
+					'</tr>';
+
 				}
+
 			?>
 		</table>
 	</div>

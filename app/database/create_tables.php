@@ -153,7 +153,7 @@ function create_table_trening()
 			'id_trening int NOT NULL PRIMARY KEY AUTO_INCREMENT,' .
 			'id_sportas int NOT NULL,' .
 			'vrsta varchar(50) NOT NULL,'.
-			'odrađen int NOT NULL,'.
+			'odraden int NOT NULL,'.
 			'interval1 varchar(50) NOT NULL,' .
 			'rez_interval1 varchar(50),' .
 			'interval2 varchar(50),' .

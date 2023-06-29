@@ -197,18 +197,3 @@ body {
 }
 
 
-.training-form-container {
-  width: 70%;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #eee;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-}
-
-.checkbox-container {
-  display: flex;
-  align-items: left;
-  gap: 10px;
-  justify-content: flex-start;
-}
