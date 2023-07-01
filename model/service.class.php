@@ -132,6 +132,8 @@ class Service{
 									'rez_interval5' => $rez_interval5, 
 									'rez_interval6' => $rez_interval6, 
 									'rez_interval7' => $rez_interval7, 
+	
+									
 									'rez_interval8' => $rez_interval8, 
 									'rez_interval9' => $rez_interval9, 
 									'rez_interval10' => $rez_interval10));
@@ -148,6 +150,32 @@ class Service{
 		try{
 			$st = $db->prepare('INSERT INTO trening (id_sportas, vrsta, ime, odraden, interval1, rez_interval1, interval2, interval3, interval4, interval5, interval6, interval7, interval8, interval9, interval10) VALUES '.
 								'(:id_sportas, :vrsta, :ime, 0, :interval1, 0, :interval2, :interval3, :interval4, :interval5, :interval6, :interval7, :interval8, :interval9, :interval10)');
+			$st->execute (array('id_sportas' => $id_sportas,
+									'vrsta' => $vrsta, 
+									'ime' => $ime, 
+									'interval1' => $interval1, 
+									'interval2' => $interval2, 
+									'interval3' => $interval3, 
+									'interval4' => $interval4, 
+									'interval5' => $interval5, 
+									'interval6' => $interval6, 
+									'interval7' => $interval7, 
+									'interval8' => $interval8, 
+									'interval9' => $interval9, 
+									'interval10' => $interval10));
+		}
+		catch( PDOException $e ){
+			echo 'Greska u Service.class.php!';
+			return 0;
+		}
+
+	}
+
+	function dodajNatjecanjeTrener($id_sportas, $ime, $datum){
+		$db = DB::getConnection();
+		try{
+			$st = $db->prepare('INSERT INTO natjecanje (id_sportas, ime, datum) VALUES '.
+								'(:id_sportas, :ime, :datum)');
 			$st->execute (array('id_sportas' => $id_sportas,
 									'vrsta' => $vrsta, 
 									'ime' => $ime, 

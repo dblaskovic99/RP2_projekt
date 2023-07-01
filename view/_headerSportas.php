@@ -15,6 +15,7 @@
 		<ul>
 	
 			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=treningSportas">Popis neodrađenih treninga</a></li>
+			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=kalendarSportas">Kalendar</a></li>
 			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=logout">Odjavi se</a></li>
 			
 
