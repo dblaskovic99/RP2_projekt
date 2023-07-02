@@ -68,24 +68,6 @@ body {
     margin-bottom: 20px;
   }
   
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #47381B;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
-  }
-  
   .submit-button {
     width: 100%;
     padding: 10px;
@@ -159,7 +141,7 @@ body {
 
 .athlete-list {
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: rgba(255, 234, 171, 0.6);
   border-radius: 8px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
   width: 90%;
@@ -197,3 +179,112 @@ body {
 }
 
 
+.training-form-container {
+  width: 70%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(255, 234, 171, 0.6);
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+
+.form-group {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group input[type=text] {
+  color: #47381B;
+  padding: 10px;
+  box-sizing: border-box; 
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* Bijela boja sa 50% prozirnosti */
+}
+
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #47381B;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+}
+
+.interval-button {
+  background-color: #F8B64B;
+  color: #47381B;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  margin-right: 10px; /* Dodano za razmak između gumba */
+}
+
+.interval-button:hover {
+  background-color: #47381B;
+  color: white;
+}
+
+.checkbox-container {
+  color: #47381B;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;  /* Rasporedi dva diva ravnomjerno preko cijele širine */
+}
+
+.sportas-info, .trening-info {
+  flex: 1;  /* Dopušta divovima da rastu i skupljaju se, zauzimajući jednaku širinu */
+  margin: 10px;  /* Dodaje malo razmaka između divova */
+}
+
+.sportas-info {
+  background-color: #F8B64B;
+  color: #47381B;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+}
+
+.sportas-info h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.sportas-info ul {
+  list-style: none;
+}
+
+.sportas-info ul li {
+  font-size: 1.2em;
+  line-height: 2em;
+}
+
+.sportas-info ul li::before {
+  content: "\2022"; /* Dodaje bullet simbol */
+  color: #47381B; 
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em; /* Kontrolira razmak između simbola i teksta */
+  margin-left: -1em; /* Pomakne simbol ulijevo */
+}
+
+.btn.my-btn {
+  background-color: #F8B64B; 
+  color: white;
+}
