@@ -7,7 +7,7 @@ document.getElementById('addInterval').addEventListener('click', function() {
         newInterval.classList.add('form-group', 'interval-group');
         newInterval.innerHTML = `
             <label for="interval${intervalCount}">Interval ${intervalCount}:</label>
-            <input type="text" id="interval${intervalCount}" name="interval[]" />
+            <input type="text" id="interval${intervalCount}" name="interval${intervalCount}" />
         `;
         document.getElementById('intervalContainer').appendChild(newInterval);
     }
