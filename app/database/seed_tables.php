@@ -3,9 +3,9 @@
 // Popunjavamo tablice u bazi "probnim" podacima.
 require_once __DIR__ . '/db.class.php';
 
-//seed_table_sport();
-//seed_table_klub();
-//seed_table_trener();
+seed_table_sport();
+seed_table_klub();
+seed_table_trener();
 seed_table_sportas();
 
 exit( 0 );
@@ -43,15 +43,15 @@ function seed_table_klub()
 	// Ubaci neke prodaje unutra (ovo nije bas pametno ovako raditi, preko hardcodiranih id-eva usera i proizvoda)
 	try
 	{
-		$st = $db->prepare( 'INSERT INTO klub(id_sport, ime_kluba, grad, drzava) VALUES (:id_sport, :ime_kluba, :grad, :drzava)' );
+		$st = $db->prepare( 'INSERT INTO klub(id_sport, ime_kluba, grad, drzava, username, password_hash, registration_sequence, has_registered) VALUES (:id_sport, :ime_kluba, :grad, :drzava, :username, :password, \'abc\', \'1\' )' );
 
-		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Jadran', 'grad' => 'Zadar', 'drzava' => 'Hrvatska') );
-		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Gusar', 'grad' => 'Split', 'drzava' => 'Hrvatska') );
-		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Krka', 'grad' => 'Šibenik', 'drzava' => 'Hrvatska') );
-		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Mladost', 'grad' => 'Zagreb', 'drzava' => 'Hrvatska') );
-		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Trešnjevka', 'grad' => 'Zagreb', 'drzava' => 'Hrvatska') );
-		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Iktus', 'grad' => 'Osijek', 'drzava' => 'Hrvatska') );
-		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Vukovar', 'grad' => 'Vukovar', 'drzava' => 'Hrvatska') );
+		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Jadran', 'grad' => 'Zadar', 'drzava' => 'Hrvatska', 'username' => 'JZD','password' => password_hash( '1234', PASSWORD_DEFAULT ) ) );
+		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Gusar', 'grad' => 'Split', 'drzava' => 'Hrvatska', 'username' => 'GUS','password' => password_hash( '1234', PASSWORD_DEFAULT ) ) );
+		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Krka', 'grad' => 'Šibenik', 'drzava' => 'Hrvatska', 'username' => 'KRK','password' => password_hash( '1234', PASSWORD_DEFAULT ) ) );
+		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Mladost', 'grad' => 'Zagreb', 'drzava' => 'Hrvatska', 'username' => 'MLA','password' => password_hash( '1234', PASSWORD_DEFAULT ) ) );
+		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Trešnjevka', 'grad' => 'Zagreb', 'drzava' => 'Hrvatska', 'username' => 'TRE','password' => password_hash( '1234', PASSWORD_DEFAULT ) ) );
+		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Iktus', 'grad' => 'Osijek', 'drzava' => 'Hrvatska', 'username' => 'IKT','password' => password_hash( '1234', PASSWORD_DEFAULT ) ) );
+		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Vukovar', 'grad' => 'Vukovar', 'drzava' => 'Hrvatska', 'username' => 'VUK','password' => password_hash( '1234', PASSWORD_DEFAULT ) ) );
 
 		
 	}

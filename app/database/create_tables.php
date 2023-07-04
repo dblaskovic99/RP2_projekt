@@ -3,9 +3,9 @@
 
 require_once __DIR__ . '/db.class.php';
 
+create_table_klub();
 create_table_trening();
 create_table_sport();
-create_table_klub();
 create_table_trener();
 create_table_sportas();
 
@@ -71,7 +71,12 @@ function create_table_klub()
 			'id_sport int NOT NULL,' .
             'ime_kluba varchar(100) NOT NULL,' .
 			'grad varchar(100),' .
-            'drzava varchar(100))'
+            'drzava varchar(100),' .
+			'username varchar(50) NOT NULL,' .
+			'password_hash varchar(255) NOT NULL,'.
+			'registration_sequence varchar(20) NOT NULL,' .
+			'has_registered int)'
+
 		);
 
 		$st->execute();
@@ -152,7 +157,9 @@ function create_table_trening()
 			'CREATE TABLE IF NOT EXISTS trening (' .
 			'id_trening int NOT NULL PRIMARY KEY AUTO_INCREMENT,' .
 			'id_sportas int NOT NULL,' .
+			'datum date NOT NULL,' .
 			'vrsta varchar(50) NOT NULL,'.
+			'ime varchar(50) NOT NULL,' .
 			'odraden int NOT NULL,'.
 			'interval1 varchar(50) NOT NULL,' .
 			'rez_interval1 varchar(50),' .

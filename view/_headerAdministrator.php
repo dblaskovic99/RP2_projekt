@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,8 +15,8 @@
 	<nav id="main-menu">
 		<ul>
 	
-			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=treningSportas">Popis neodrađenih treninga</a></li>
-			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=OdradeniSportas">Popis odrađenih treninga</a></li>
+			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=svisportasiTrener">Dodaj sportaša</a></li>
+			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=treningTrener">Dodaj trenera</a></li>
 			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=logout">Odjavi se</a></li>
 			
 

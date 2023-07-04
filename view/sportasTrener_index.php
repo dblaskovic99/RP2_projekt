@@ -1,9 +1,9 @@
 <?php require_once __SITE_PATH . '/view/_headerTrener.php'; ?>
 
 
-	<h2>Podaci o korisniku:</h2>
 	<div class="sportas-info">
-		
+		<h2>Podaci o korisniku:</h2>
+
 		<ul>
 			<li>username: <?php echo $sportas->username; ?></li>
 			<li>ime: <?php echo $sportas->ime; ?></li>
@@ -12,6 +12,16 @@
 			<li>kategorija: <?php echo $sportas->kategorija; ?></li>
 			
 		</ul>
+		<h2>Rekordi: </h2>
+		<?php 
+			echo 'najboljih 500m:' . $max500m; echo '<br>';
+			echo 'najboljih 1000m:' . $max1000m; echo '<br>';
+			echo 'najboljih 2000m:' . $max2000m; echo '<br>';
+			echo 'najboljih 6000m:' . $max6000m; echo '<br>';
+			echo 'najboljih 30min:' . $max30min;
+			
+		?>
+
 	</div>
 		
 	<div class="trening-info">
@@ -44,6 +54,31 @@
 					'<td>' . $treningList[$i][22] . '</td>' .
 					'<td>' . $treningList[$i][23] . '</td>' .
 					'<td>' . $treningList[$i][24] . '</td>' .
+					'</tr>';
+
+				}
+
+			?>
+		</table>
+		<h1>Neodrađeni treninzi:</h1>
+	<table>
+			<tr><th>Vrsta</th><th>Ime</th><th> 1 </th><th> 2</th><th> 3</th><th> 4</th><th> 5</th><th> 6</th><th> 7</th><th> 8</th><th> 9</th><th> 10</th></tr>
+			<?php 
+
+				for($i=0; $i<Count($treningListNeodradeni); $i++){
+					echo '<tr>' .
+					'<td>' . $treningListNeodradeni[$i][2] . '</td>' .
+					'<td>' . $treningListNeodradeni[$i][3] . '</td>' .
+					'<td>' . $treningListNeodradeni[$i][5] . '</td>' .
+					'<td>' . $treningListNeodradeni[$i][7] . '</td>' .
+					'<td>' . $treningListNeodradeni[$i][9] . '</td>' .
+					'<td>' . $treningListNeodradeni[$i][11] . '</td>' .
+					'<td>' . $treningListNeodradeni[$i][13] . '</td>' .
+					'<td>' . $treningListNeodradeni[$i][15] . '</td>' .
+					'<td>' . $treningListNeodradeni[$i][17] . '</td>' .
+					'<td>' . $treningListNeodradeni[$i][19] . '</td>' .
+					'<td>' . $treningListNeodradeni[$i][21] . '</td>' .
+					'<td>' . $treningListNeodradeni[$i][23] . '</td>' .
 					'</tr>';
 
 				}

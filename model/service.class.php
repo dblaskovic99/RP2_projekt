@@ -76,7 +76,27 @@ class Service{
 			return new Trener( $row['id_trener'],$row['username'], $row['password_hash'], $row['ime'], $row['prezime'], $row['id_klub'], $row['registration_sequence'], $row['has_registered']);
 	}
 
-	function getTreningPoSportas($id_sportas)
+	function getAdminPoUsername( $username )
+	{
+		try
+		{
+			$db = DB::getConnection();
+			$st = $db->prepare('SELECT * FROM klub WHERE username = :username');
+			$st->execute( array( 'username' => $username ) );
+		}
+		catch( PDOException $e ) { exit( 'PDO error ' . $e->getMessage() ); }
+		$row = $st->fetch();
+		if( $row === false )
+			return null;
+        else
+			return new Klub ($row['id_klub'], $row['id_sport'],
+			$row['ime_kluba'], $row['grad'], $row['drzava'],
+			$row['username'], $row['password_hash'], 
+			$row['registration_sequence'], $row['has_registered']);
+
+	}
+
+	function getTreningPoSportasOdradeni($id_sportas)
 	{
 		try {
 			$db = DB::getConnection();
@@ -90,6 +110,8 @@ class Service{
 
 		
 	}
+
+
 	function getTreningPoID($id_trening)
 	{
 		try {
@@ -115,10 +137,8 @@ class Service{
 		}
 		$trening=$st->fetchAll();
 		return $trening;
+	}
 
-
-
-}
 	function napraviTrening($id_trening, $rez_interval1, $rez_interval2, $rez_interval3, $rez_interval4, $rez_interval5, $rez_interval6, $rez_interval7, $rez_interval8, $rez_interval9, $rez_interval10){
 		$db = DB::getConnection();
 		try{
@@ -186,7 +206,68 @@ class Service{
 		}
 		catch( PDOException $e ) { exit( 'Greška u bazi: ' . $e->getMessage() ); }
 	}
+	
+
+	function getMax500m($id_sportas){
+		try {
+			$db = DB::getConnection();
+			$st = $db->prepare('SELECT MIN(rez_interval1) AS min_rez FROM trening WHERE id_sportas = :id_sportas AND (ime="500m" OR ime="500") AND odraden=1');
+			$st->execute(array('id_sportas' => $id_sportas));
+		} catch (PDOException $e) {
+			exit('PDO error ' . $e->getMessage());
+		}
+		$trening=$st->fetch();
+		return $trening['min_rez'];
+
 	}
+	function getMax1000m($id_sportas){
+		try {
+			$db = DB::getConnection();
+			$st = $db->prepare('SELECT MIN(rez_interval1) AS min_rez FROM trening WHERE id_sportas = :id_sportas AND (ime="1000m" OR ime="1000") AND odraden=1');
+			$st->execute(array('id_sportas' => $id_sportas));
+		} catch (PDOException $e) {
+			exit('PDO error ' . $e->getMessage());
+		}
+		$trening=$st->fetch();
+		return $trening['min_rez'];
+
+	}
+	function getMax2000m($id_sportas){
+		try {
+			$db = DB::getConnection();
+			$st = $db->prepare('SELECT MIN(rez_interval1) AS min_rez FROM trening WHERE id_sportas = :id_sportas AND (ime="2000m" OR ime="2000") AND odraden=1');
+			$st->execute(array('id_sportas' => $id_sportas));
+		} catch (PDOException $e) {
+			exit('PDO error ' . $e->getMessage());
+		}
+		$trening=$st->fetch();
+		return $trening['min_rez'];
+
+	}
+	function getMax6000m($id_sportas){
+		try {
+			$db = DB::getConnection();
+			$st = $db->prepare('SELECT MIN(rez_interval1) AS min_rez FROM trening WHERE id_sportas = :id_sportas AND (ime="6000m" OR ime="6000") AND odraden=1');
+			$st->execute(array('id_sportas' => $id_sportas));
+		} catch (PDOException $e) {
+			exit('PDO error ' . $e->getMessage());
+		}
+		$trening=$st->fetch();
+		return $trening['min_rez'];
+
+	}function getMax30min($id_sportas){
+		try {
+			$db = DB::getConnection();
+			$st = $db->prepare('SELECT MIN(rez_interval1) AS min_rez FROM trening WHERE id_sportas = :id_sportas AND ime="30min" AND odraden=1');
+			$st->execute(array('id_sportas' => $id_sportas));
+		} catch (PDOException $e) {
+			exit('PDO error ' . $e->getMessage());
+		}
+		$trening=$st->fetch();
+		return $trening['min_rez'];
+
+	}
+}
 
 
 ?>

@@ -7,9 +7,8 @@ class napraviTreningSportasController extends BaseController
 		
     
         $ls = new Service();
-        $i=0;
-        if(isset($_POST['rez_interval1'][$i])){
-            $trening=$ls->getTreningPoID($_GET['id_trening']);
+        if(isset($_POST['rez_interval1'])){
+            $trening=$_GET['id_trening'];
             $ls->napraviTrening(
                 $trening,
                 $_POST['rez_interval1'],
@@ -25,7 +24,7 @@ class napraviTreningSportasController extends BaseController
             );
 
             // Redirect to the sportas_index page
-            header("Location: " . __SITE_URL . "/index.php?rt=treningSportas" );
+            header("Location: " . __SITE_URL . "/index.php?rt=OdradeniSportas" );
             exit();
         }
             
