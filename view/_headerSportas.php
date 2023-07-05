@@ -4,6 +4,9 @@
 	<meta charset="utf8">
 	<link rel="stylesheet" type="text/css" href="CSS/styles.css">
 	<title>Moj trening</title>
+	<?php
+	setlocale(LC_TIME, 'hr_HR.utf8'); // Postavite hrvatski jezik kao lokalne postavke
+	?>
 </head>
 <body>
 	<div class="header">
