@@ -18,7 +18,7 @@ class obavijestiTrenerController extends BaseController
         if(isset($_POST['novaobavijest']))
         {
             $service = new Service();
-            $service->novaObavijest($_SESSION['id'], $_POST['novaobavijest']);
+            $service->novaObavijest($_SESSION['id_trener'], $_POST['novaobavijest']);
 
             // Redirect user back to their quacks page
             header('Location: index.php?rt=obavijestiTrener/index');
