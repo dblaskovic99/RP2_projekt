@@ -212,7 +212,7 @@ class Service{
         $stmt->bindValue(':obavijest', $obavijest);
         $stmt->execute();
     }
-	function obavijestiSportas($id_user) 
+	function obavijestiSportas($id_sportas) 
 	{
 		$obavijesti = [];
 			
@@ -220,7 +220,7 @@ class Service{
 	
 		// Dohvati id_trener za određenog sportaša
 		$st = $db->prepare('SELECT id_trener FROM sportas WHERE id_sportas = :id_sportas');
-		$st->execute(['id_sportas' => $id_user]);
+		$st->execute(['id_sportas' => $id_sportas]);
 		$res = $st->fetch();
 	
 		// Ako nema rezultata, vrati prazan array
@@ -228,7 +228,7 @@ class Service{
 			return $obavijesti;
 		}
 	
-		$id_trener = $res->id_trener;
+		$id_trener = $res['id_trener'];
 	
 		// Dohvati sve obavijesti koje je objavio određeni trener
 		$st = $db->prepare('SELECT * FROM obavijesti WHERE id_trener = :id_trener');

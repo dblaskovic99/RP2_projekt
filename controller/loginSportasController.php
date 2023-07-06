@@ -41,6 +41,7 @@ class LoginSportasController extends BaseController
 			{
 				// Sad je valjda sve OK. Ulogiraj ga.
 				$_SESSION['username'] = $_POST['username'];
+				$_SESSION['id_sportas']= $trener-> id_sportas;
 				
 
 
