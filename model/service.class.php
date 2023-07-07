@@ -86,23 +86,21 @@ class Service{
 			exit('PDO error ' . $e->getMessage());
 		}
 		$trening=$st->fetchAll();
-		return $trening;
-
-		
+		return $trening;	
 	}
+
 	function getTreningPoID($id_trening)
 	{
 		try {
 			$db = DB::getConnection();
 			$st = $db->prepare('SELECT * FROM trening WHERE id_trening = :id_trening');
 			$st->execute(array('id_trening' => $id_trening));
-		} catch (PDOException $e) {
+		} 
+		catch (PDOException $e) {
 			exit('PDO error ' . $e->getMessage());
 		}
 		$trening=$st->fetchAll();
 		return $trening;
-
-		
 	}
 	
 	function getNeodradeneTreninge($id_sportas){
@@ -110,12 +108,12 @@ class Service{
 			$db = DB::getConnection();
 			$st = $db->prepare('SELECT * FROM trening WHERE id_sportas = :id_sportas AND odraden=0');
 			$st->execute(array('id_sportas' => $id_sportas));
-		} catch (PDOException $e) {
+		} 
+		catch (PDOException $e) {
 			exit('PDO error ' . $e->getMessage());
 		}
 		$trening=$st->fetchAll();
 		return $trening;
-	}
 	}
 
 	/*
@@ -185,32 +183,6 @@ class Service{
 
 	}
 
-	/*function dodajNatjecanjeTrener($id_sportas, $ime, $datum){
-		$db = DB::getConnection();
-		try{
-			$st = $db->prepare('INSERT INTO natjecanje (id_sportas, ime, datum) VALUES '.
-								'(:id_sportas, :ime, :datum)');
-			$st->execute (array('id_sportas' => $id_sportas,
-									'vrsta' => $vrsta, 
-									'ime' => $ime, 
-									'datum' => $datum));
-		}
-		catch( PDOException $e ){
-			echo 'Greska u Service.class.php!';
-			return 0;
-		}
-									'interval7' => $interval7, 
-	} */
-									'interval9' => $interval9, 
-									'interval10' => $interval10));
-		}
-		catch( PDOException $e ){
-			echo 'Greska u Service.class.php!';
-			return 0;
-		}
-
-	}
-
 	function dodajNovogTrenera( $username, $password, $ime, $prezime, $id_klub, $reg_seq )
 	{
 		try
@@ -218,6 +190,13 @@ class Service{
 			$db = DB::getConnection();
 			$st = $db->prepare( 'INSERT INTO trener(username, password_hash, ime, prezime, id_klub, registration_sequence, has_registered) VALUES ' .
 								'(:username, :password_hash, :ime, :prezime, :id_klub, :registration_sequence, 1)' );
+		}
+		
+		catch( PDOException $e ){
+			echo 'Greska u Service.class.php!';
+			return 0;
+		}
+	}
 			
 	function sveObavijestiTrener($id_trener)
 	{
@@ -245,6 +224,8 @@ class Service{
         $stmt->bindValue(':obavijest', $obavijest);
         $stmt->execute();
     }
+	
+	
 	function obavijestiSportas($id_sportas) 
 	{
 		$obavijesti = [];
@@ -273,17 +254,5 @@ class Service{
 	
 		return $obavijesti;
 	}
-}
-
-	
-	
-			$obavijesti[] = $row;
-		}
-	
-		return $obavijesti;
-	}
-}
-
-	
-	
+}		
 ?>
