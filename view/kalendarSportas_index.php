@@ -48,15 +48,45 @@
         if ($dayCount <= $numDays) {
             if ($row == 1 && $col < $firstDay) {
                 echo '<td></td>';
-            } else {
+            } 
+            else {
                 if ($dayCount == date('j') && $month == date('m') && $year == date('Y')) {
-                    echo '<td class="current-month">' . $dayCount . '</td>';
-                } else {
-                    echo '<td>' . $dayCount . '</td>';
+                    echo '<td class="current-month">' . $dayCount;
+                } 
+                
+                else {
+                    echo '<td>' . $dayCount;
                 }
+                
+                foreach ( $treningList as $trening ) {
+                    $datumTrening = $trening[2]; // Pretpostavljamo da je format datuma "Y-m-d" (npr. "2023-07-01")
+                    $danTrening = date('d', strtotime($datumTrening));
+                    $mjesecTrening = date('m', strtotime($datumTrening));
+                    $godinaTrening = date('Y', strtotime($datumTrening));
+
+                    
+                    if ($danTrening == $dayCount && $mjesecTrening == $month && $godinaTrening == $year) {
+                        echo '<br>' . $trening[3] . ' ' . $trening[4];
+                    }
+                }
+
+               /*foreach( $natjecanjeList as $natjecanje ) {
+                    $datumNatjecanje = $natjecanje->datum; // Pretpostavljamo da je format datuma "Y-m-d" (npr. "2023-07-01")
+                    $danNatjecanje = date('d', strtotime($datum));
+                    $mjesecNtjecanje = date('m', strtotime($datum));
+                    $godinaNatjecanje = date('Y', strtotime($datum));
+                    
+                     if ($danNatjecanje == $dayCount && $mjesecNatjecanje == $month && $godinaNatjecanje == $year) {
+                        echo $natjecanje.ime;
+                    }
+               }*/
+
+               echo '</td>';
+
                 $dayCount++;
             }
-        } else {
+        } 
+        else {
             echo '<td></td>';
         }
     }

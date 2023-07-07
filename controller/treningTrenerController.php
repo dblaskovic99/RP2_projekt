@@ -5,7 +5,7 @@ class treningTrenerController extends BaseController
         $ls = new Service();
         $i=0;
         while(isset($_POST['username'][$i])) {
-            if (isset($_POST['vrsta']) && isset($_POST['ime']) && isset($_POST['interval1'])) {
+            if (isset($_POST['vrsta']) && isset($_POST['ime']) && isset($_POST['interval1']) && isset($_POST['datum'])) {
                 $sportas = $ls->getSportasPoUsername($_POST['username'][$i]); // changed from 0 to $i
                 $id_sportas = $sportas->id_sportas;
                 
@@ -17,7 +17,7 @@ class treningTrenerController extends BaseController
                         $intervals[$j] = null;
                     }
                 }
-                $ls->dodajTreningTrener($id_sportas, $_POST['vrsta'], $_POST['ime'], ...$intervals);
+                $ls->dodajTreningTrener($id_sportas, $_POST['datum'], $_POST['vrsta'], $_POST['ime'], ...$intervals);
 
             } 
             $i++; // increment $i

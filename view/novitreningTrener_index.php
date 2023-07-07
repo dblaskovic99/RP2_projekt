@@ -11,6 +11,10 @@
             <input type="text" id="ime" name="ime" />
         </div>
         <div class="form-group">
+            <label for="datum">Datum:</label>
+            <input type="date" id="datum" name="datum" />
+        </div>
+        <div class="form-group">
             <label for="sportasi">Sportaši:</label>
             <?php 
                 foreach( $sportasList as $sportas )
