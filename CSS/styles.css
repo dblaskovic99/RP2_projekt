@@ -321,6 +321,58 @@ a {
     color: #333333;
 }
 
-    a:hover {
+a:hover {
         text-decoration: underline;
-    }
+}
+
+.obavijest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2em auto; 
+  max-width: 400px;
+  padding: 1em;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+.obavijest label {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+.obavijest textarea {
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.obavijest input[type="submit"] {
+  padding: 0.5em 1em;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.obavijest input[type="submit"]:hover {
+  background-color: #47381B;
+}
+.obavijest-box {
+  margin: 1em 0;
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+.obavijest-box p {
+  margin: 0.5em 0;
+}
+.obavijest-box .date {
+  color: #aaa;
+  font-size: 0.8em;
+}
+.obavijest-box .text {
+  font-size: 1.2em;
+}
+

@@ -116,6 +116,7 @@ class Service{
 		$trening=$st->fetchAll();
 		return $trening;
 	}
+	}
 
 	/*
 	function getNeodradenaNatjecanja($id_sportas){
@@ -198,8 +199,17 @@ class Service{
 			echo 'Greska u Service.class.php!';
 			return 0;
 		}
-
+									'interval7' => $interval7, 
 	} */
+									'interval9' => $interval9, 
+									'interval10' => $interval10));
+		}
+		catch( PDOException $e ){
+			echo 'Greska u Service.class.php!';
+			return 0;
+		}
+
+	}
 
 	function dodajNovogTrenera( $username, $password, $ime, $prezime, $id_klub, $reg_seq )
 	{
@@ -209,16 +219,71 @@ class Service{
 			$st = $db->prepare( 'INSERT INTO trener(username, password_hash, ime, prezime, id_klub, registration_sequence, has_registered) VALUES ' .
 								'(:username, :password_hash, :ime, :prezime, :id_klub, :registration_sequence, 1)' );
 			
-			$st->execute( array( 'username' => $username, 
-								'password_hash' => password_hash( $password, PASSWORD_DEFAULT ), 
-								'ime' => $ime, 
-								'prezime'  => $prezime,
-								'id_klub' => $id_klub,
-								'registration_sequence'  => $reg_seq ) );
+	function sveObavijestiTrener($id_trener)
+	{
+		$obavijesti = [];
+			
+		$db = DB::getConnection();
+
+		// Dohvati sve obavijesti koje je objavio određeni trener
+		$st = $db->prepare('SELECT * FROM obavijesti WHERE id_trener = :id_trener');
+		$st->execute(['id_trener' => $id_trener]);
+
+		while($row = $st->fetch()) {
+			$obavijesti[] = $row;
 		}
-		catch( PDOException $e ) { exit( 'Greška u bazi: ' . $e->getMessage() ); }
-	}
+		$db = DB::getConnection();
+		return $obavijesti;
 	}
 
 
+	function novaObavijest($id_trener, $obavijest) 
+    {
+        $db = DB::getConnection();
+        $stmt = $db->prepare("INSERT INTO obavijesti (id_trener, obavijest, date) VALUES (:id_trener, :obavijest, NOW())");
+        $stmt->bindValue(':id_trener', $id_trener);
+        $stmt->bindValue(':obavijest', $obavijest);
+        $stmt->execute();
+    }
+	function obavijestiSportas($id_sportas) 
+	{
+		$obavijesti = [];
+			
+		$db = DB::getConnection();
+	
+		// Dohvati id_trener za određenog sportaša
+		$st = $db->prepare('SELECT id_trener FROM sportas WHERE id_sportas = :id_sportas');
+		$st->execute(['id_sportas' => $id_sportas]);
+		$res = $st->fetch();
+	
+		// Ako nema rezultata, vrati prazan array
+		if($res === false) {
+			return $obavijesti;
+		}
+	
+		$id_trener = $res['id_trener'];
+	
+		// Dohvati sve obavijesti koje je objavio određeni trener
+		$st = $db->prepare('SELECT * FROM obavijesti WHERE id_trener = :id_trener');
+		$st->execute(['id_trener' => $id_trener]);
+	
+		while($row = $st->fetch()) {
+			$obavijesti[] = $row;
+		}
+	
+		return $obavijesti;
+	}
+}
+
+	
+	
+			$obavijesti[] = $row;
+		}
+	
+		return $obavijesti;
+	}
+}
+
+	
+	
 ?>
