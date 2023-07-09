@@ -1,12 +1,13 @@
 <?php
     class Trening{
 
-            protected $id_trening, $id_sportas, $vrsta, $ime, $intreval1, $rez_interval1, $intreval2, $rez_interval2, $intreval3, $rez_interval3, $intreval4, $rez_interval4, $intreval5, $rez_interval5, $intreval6, $rez_interval6, $intreval7, $rez_interval7, $intreval8, $rez_interval8, $intreval9, $rez_interval9, $intreval10, $rez_interval10;
+            protected $id_trening, $id_sportas, $datum, $vrsta, $ime, $intreval1, $rez_interval1, $intreval2, $rez_interval2, $intreval3, $rez_interval3, $intreval4, $rez_interval4, $intreval5, $rez_interval5, $intreval6, $rez_interval6, $intreval7, $rez_interval7, $intreval8, $rez_interval8, $intreval9, $rez_interval9, $intreval10, $rez_interval10;
 
-            function __construct($id_trening, $id_sportas, $vrsta, $ime, $intreval1, $rez_interval1, $intreval2, $rez_interval2, $intreval3, $rez_interval3, $intreval4, $rez_interval4, $intreval5, $rez_interval5, $intreval6, $rez_interval6, $intreval7, $rez_interval7, $intreval8, $rez_interval8, $intreval9, $rez_interval9, $intreval10, $rez_interval10 )
+            function __construct($id_trening, $id_sportas, $datum, $vrsta, $ime, $intreval1, $rez_interval1, $intreval2, $rez_interval2, $intreval3, $rez_interval3, $intreval4, $rez_interval4, $intreval5, $rez_interval5, $intreval6, $rez_interval6, $intreval7, $rez_interval7, $intreval8, $rez_interval8, $intreval9, $rez_interval9, $intreval10, $rez_interval10 )
             {
                 $this->id_trening=$id_trening;
                 $this->id_sportas=$id_sportas;
+                $this->datum=$datum;
                 $this->vrsta=$vrsta;
                 $this->ime=$ime;
                 $this->intreval1=$intreval1;     
