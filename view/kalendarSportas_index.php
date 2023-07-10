@@ -3,7 +3,7 @@ $activePage = 'kalendarSportas';
 require_once __SITE_PATH . '/view/_headerSportas.php';
 ?>
 
-    <div>
+    <div class="trening-info">
     <?php
     
     // Dobivamo prvi i zadnji dan trenutnog mjeseca
@@ -62,31 +62,27 @@ require_once __SITE_PATH . '/view/_headerSportas.php';
                     echo '<td>' . $dayCount;
                 }
                 
-                foreach ( $treningList as $trening ) {
-                    $datumTrening = $trening[2]; 
+                foreach ( $sviTreninziList as $trening ) {
+                    $datumTrening = $trening[2];
                     $danTrening = date('d', strtotime($datumTrening));
                     $mjesecTrening = date('m', strtotime($datumTrening));
                     $godinaTrening = date('Y', strtotime($datumTrening));
 
-                    
-                    if ($danTrening == $dayCount && $mjesecTrening == $month && $godinaTrening == $year) {
-                        echo '<br>' . $trening[3] . ' ' . $trening[4];
-                    }
+                    if ($danTrening == $dayCount && $mjesecTrening == $month && $godinaTrening == $year) 
+                        echo '<br><span style="color: green;">' . $trening[3] . ' ' . $trening[4] . '</span>';
                 }
-          
-                foreach ( $natjecanjaList as $natjecanje ) {
-                    $datumNatjecanje = $natjecanje[2]; 
+                
+                foreach ( $svaNatjecanjaList as $natjecanje ) {
+                    $datumNatjecanje = $natjecanje[2];
                     $danNatjecanje = date('d', strtotime($datumNatjecanje));
                     $mjesecNatjecanje = date('m', strtotime($datumNatjecanje));
                     $godinaNatjecanje = date('Y', strtotime($datumNatjecanje));
-                    
-                     if ($danNatjecanje == $dayCount && $mjesecNatjecanje == $month && $godinaNatjecanje == $year) {
-                        echo '<br>' . $natjecanje[3];
-                    }
-               }
 
-               echo '</td>';
+                    if ($danNatjecanje == $dayCount && $mjesecNatjecanje == $month && $godinaNatjecanje == $year)
+                        echo '<br><span style="color: red;">' . $natjecanje[3] . '</span>';
+                }
 
+                echo '</td>';
                 $dayCount++;
             }
         } 

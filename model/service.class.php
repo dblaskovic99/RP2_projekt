@@ -134,10 +134,24 @@ class Service{
 		$trening=$st->fetchAll();
 		return $trening;
 	}
+
+	function getSveTreninge($id_sportas){
+		try {
+			$db = DB::getConnection();
+			$st = $db->prepare('SELECT * FROM trening WHERE id_sportas = :id_sportas');
+			$st->execute(array('id_sportas' => $id_sportas));
+		} 
+		catch (PDOException $e) {
+			exit('PDO error ' . $e->getMessage());
+		}
+		$trening=$st->fetchAll();
+		return $trening;
+	}
+
 	function getBuducaNatjecanja($id_sportas){
 		try {
 			$db = DB::getConnection();
-			$st = $db->prepare('SELECT * FROM natjecanje WHERE id_sportas = :id_sportas ');
+			$st = $db->prepare('SELECT * FROM natjecanje WHERE id_sportas = :id_sportas');
 			$st->execute(array('id_sportas' => $id_sportas));
 		} 
 		catch (PDOException $e) {
@@ -146,19 +160,6 @@ class Service{
 		$natjecanje=$st->fetchAll();
 		return $natjecanje;
 	}
-	/*
-	function getNeodradenaNatjecanja($id_sportas){
-		try {
-			$db = DB::getConnection();
-			$st = $db->prepare('SELECT * FROM natjecanje WHERE id_sportas = :id_sportas AND odraden=0');
-			$st->execute(array('id_sportas' => $id_sportas));
-		} catch (PDOException $e) {
-			exit('PDO error ' . $e->getMessage());
-		}
-		$natjecanje=$st->fetchAll();
-		return $natjecanje;
-	}
-	*/
 
 	function napraviTrening($id_trening, $rez_interval1, $rez_interval2, $rez_interval3, $rez_interval4, $rez_interval5, $rez_interval6, $rez_interval7, $rez_interval8, $rez_interval9, $rez_interval10){
 		$db = DB::getConnection();
