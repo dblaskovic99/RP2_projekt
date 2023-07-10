@@ -1,4 +1,6 @@
-<?php require_once __SITE_PATH . '/view/_headerTrener.php'; ?>
+<?php 
+$activePage = 'loginTrener';
+require_once __SITE_PATH . '/view/_headerTrener.php'; ?>
 
 
 	<div class="sportas-info">

@@ -1,4 +1,7 @@
-<?php require_once __SITE_PATH . '/view/_headerTrener.php'; ?>
+<?php 
+$activePage = 'svisportasiTrener';
+require_once __SITE_PATH . '/view/_headerTrener.php'; 
+?>
 
 <div class="athlete-list">
 	<h2 style="font-weight: bold;">Popis Vaših sportaša:</h2>

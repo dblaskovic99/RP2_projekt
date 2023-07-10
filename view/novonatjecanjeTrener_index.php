@@ -1,4 +1,7 @@
-<?php require_once __SITE_PATH . '/view/_headerTrener.php'; ?>
+<?php 
+$activePage = 'natjecanjeTrener';
+require_once __SITE_PATH . '/view/_headerTrener.php'; 
+?>
 
 <div class="training-form-container">
     <form method="post" action="<?php echo __SITE_URL; ?>/index.php?rt=natjecanjeTrener">

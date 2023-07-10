@@ -307,21 +307,24 @@ class Service{
 	}
 			
 	function sveObavijestiTrener($id_trener)
-	{
-		$obavijesti = [];
-			
-		$db = DB::getConnection();
+{
+    $obavijesti = [];
+        
+    $db = DB::getConnection();
 
-		// Dohvati sve obavijesti koje je objavio određeni trener
-		$st = $db->prepare('SELECT * FROM obavijesti WHERE id_trener = :id_trener');
-		$st->execute(['id_trener' => $id_trener]);
+    // Dohvati sve obavijesti koje je objavio određeni trener i dohvati njegov username
+    $st = $db->prepare('SELECT obavijesti.*, trener.username FROM obavijesti 
+                        JOIN trener ON obavijesti.id_trener = trener.id_trener
+                        WHERE obavijesti.id_trener = :id_trener');
+    $st->execute(['id_trener' => $id_trener]);
 
-		while($row = $st->fetch()) {
-			$obavijesti[] = $row;
-		}
-		$db = DB::getConnection();
-		return $obavijesti;
-	}
+    while($row = $st->fetch()) {
+        $obavijesti[] = $row;
+    }
+
+    return $obavijesti;
+}
+
 
 
 	function novaObavijest($id_trener, $obavijest) 

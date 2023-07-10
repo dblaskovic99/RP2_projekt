@@ -19,10 +19,10 @@
 	<nav id="main-menu">
 		<ul>
 	
-			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=svisportasiTrener">Popis sportaša</a></li>
-			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=treningTrener">Dodaj novi trening!</a></li>
-			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=natjecanjeTrener">Dodaj novo natjecanje!</a></li>
-			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=obavijestiTrener">Obavijesti</a></li>
+			<li><a <?php if($activePage =='svisportasiTrener') {echo 'class="active"';} ?> href="<?php echo __SITE_URL; ?>/index.php?rt=svisportasiTrener">Popis sportaša</a></li>
+			<li><a <?php if($activePage =='treningTrener') {echo 'class="active"';} ?> href="<?php echo __SITE_URL; ?>/index.php?rt=treningTrener">Dodaj novi trening!</a></li>
+			<li><a <?php if($activePage =='natjecanjeTrener') {echo 'class="active"';} ?> href="<?php echo __SITE_URL; ?>/index.php?rt=natjecanjeTrener">Dodaj novo natjecanje!</a></li>
+			<li><a <?php if($activePage =='obavijestiTrener') {echo 'class="active"';} ?> href="<?php echo __SITE_URL; ?>/index.php?rt=obavijestiTrener">Obavijesti</a></li>
 			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=logout">Odjavi se</a></li>
 			
 

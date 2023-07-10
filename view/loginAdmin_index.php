@@ -1,5 +1,5 @@
 <?php 
-$activePage = 'loginSportas';
+$activePage = 'loginAdmin';
 require_once __SITE_PATH . '/view/_header_pocetni.php'; ?>
 
 <section class="login-section">
