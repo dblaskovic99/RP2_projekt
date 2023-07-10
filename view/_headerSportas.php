@@ -17,13 +17,13 @@
 	<nav id="main-menu">
 		<ul>
 	
-			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=treningSportas">Popis neodrađenih treninga</a></li>
-			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=OdradeniSportas">Popis odrađenih treninga</a></li>
-			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=natjecanjaSportas">Buduća natjecanja</a></li>
+			<li><a <?php if($activePage =='treningSportas') {echo 'class="active"';} ?> href="<?php echo __SITE_URL; ?>/index.php?rt=treningSportas">Popis neodrađenih treninga</a></li>
+			<li><a <?php if($activePage =='OdradeniSportas') {echo 'class="active"';} ?> href="<?php echo __SITE_URL; ?>/index.php?rt=OdradeniSportas">Popis odrađenih treninga</a></li>
+			<li><a <?php if($activePage =='natjecanjaSportas') {echo 'class="active"';} ?> href="<?php echo __SITE_URL; ?>/index.php?rt=natjecanjaSportas">Buduća natjecanja</a></li>
 
-			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=kalendarSportas">Kalendar</a></li>
-			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=obavijestiSportas">Obavijesti</a></li>
-			<li><a href="<?php echo __SITE_URL; ?>/index.php?rt=logout">Odjavi se</a></li>
+			<li><a <?php if($activePage =='kalendarSportas') {echo 'class="active"';} ?> href="<?php echo __SITE_URL; ?>/index.php?rt=kalendarSportas">Kalendar</a></li>
+			<li><a <?php if($activePage =='obavijestiSportas') {echo 'class="active"';} ?> href="<?php echo __SITE_URL; ?>/index.php?rt=obavijestiSportas">Obavijesti</a></li>
+			<li><a <?php if($activePage =='logout') {echo 'class="active"';} ?> href="<?php echo __SITE_URL; ?>/index.php?rt=logout">Odjavi se</a></li>
 			
 
 			<!--<li><a href="<//?php echo __SITE_URL; ?>/index.php?rt=registersportas">Registracija sportaša</a></li>-->

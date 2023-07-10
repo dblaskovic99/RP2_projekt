@@ -1,4 +1,8 @@
-<?php require_once __SITE_PATH . '/view/_headerSportas.php'; ?>
+<?php 
+$activePage = 'kalendarSportas';
+require_once __SITE_PATH . '/view/_headerSportas.php';
+?>
+
     <div>
     <?php
     
@@ -10,7 +14,7 @@
     $prevMonth = date('m', strtotime('-1 month', strtotime($year . '-' . $month . '-01')));
     $prevYear = date('Y', strtotime('-1 month', strtotime($year . '-' . $month . '-01')));
     
-    // Sljedeæi mjesec i godina
+    // Sljedeï¿½i mjesec i godina
     $nextMonth = date('m', strtotime('+1 month', strtotime($year . '-' . $month . '-01')));
     $nextYear = date('Y', strtotime('+1 month', strtotime($year . '-' . $month . '-01')));
     ?>
@@ -38,10 +42,10 @@
     // Broj redova u tablici
     $numRows = ceil(($numDays + $firstDay - 1) / 7);
     
-    // Brojaè dana
+    // Brojaï¿½ dana
     $dayCount = 1;
     
-    // Kreiranje redova i æelija za svaki dan
+    // Kreiranje redova i ï¿½elija za svaki dan
     for ($row = 1; $row <= $numRows; $row++) {
     echo '<tr>';
     for ($col = 1; $col <= 7; $col++) {

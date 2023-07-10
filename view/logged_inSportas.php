@@ -1,4 +1,6 @@
-<?php require_once __SITE_PATH . '/view/_headerSportas.php'; ?>
+<?php 
+$activePage = 'loginSportas';
+require_once __SITE_PATH . '/view/_headerSportas.php'; ?>
 
 <div class="notification">
 	<p>Bravo <?php echo $_SESSION['username']; ?>!</p>

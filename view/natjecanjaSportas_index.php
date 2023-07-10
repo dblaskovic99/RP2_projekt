@@ -1,4 +1,7 @@
-<?php require_once __SITE_PATH . '/view/_headerSportas.php'; ?>
+<?php 
+$activePage = 'natjecanjaSportas';
+require_once __SITE_PATH . '/view/_headerSportas.php';
+?>
 
     <div class="trening-info" id="odbrojavanje">
         <h2>Odbrojavanje do prvog natjecanja</h2>

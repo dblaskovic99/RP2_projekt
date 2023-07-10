@@ -1,4 +1,7 @@
-<?php require_once __DIR__ . '/_headerSportas.php'; ?>
+<?php 
+	$activePage = 'obavijestiSportas';
+	require_once __DIR__ . '/_headerSportas.php'; 
+?>
 
 
 <?php 

@@ -1,5 +1,7 @@
 
-<?php require_once __SITE_PATH . '/view/_headerSportas.php'; ?>
+<?php 
+$activePage = 'treningSportas';
+require_once __SITE_PATH . '/view/_headerSportas.php'; ?>
 
 
 <form method="post" action="<?php echo __SITE_URL; ?>/index.php?rt=napraviTreningSportas">
