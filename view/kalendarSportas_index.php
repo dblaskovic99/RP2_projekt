@@ -1,5 +1,5 @@
 <?php require_once __SITE_PATH . '/view/_headerSportas.php'; ?>
-
+    <div>
     <?php
     
     // Dobivamo prvi i zadnji dan trenutnog mjeseca
@@ -59,7 +59,7 @@
                 }
                 
                 foreach ( $treningList as $trening ) {
-                    $datumTrening = $trening[2]; // Pretpostavljamo da je format datuma "Y-m-d" (npr. "2023-07-01")
+                    $datumTrening = $trening[2]; 
                     $danTrening = date('d', strtotime($datumTrening));
                     $mjesecTrening = date('m', strtotime($datumTrening));
                     $godinaTrening = date('Y', strtotime($datumTrening));
@@ -69,17 +69,17 @@
                         echo '<br>' . $trening[3] . ' ' . $trening[4];
                     }
                 }
-
-               /*foreach( $natjecanjeList as $natjecanje ) {
-                    $datumNatjecanje = $natjecanje->datum; // Pretpostavljamo da je format datuma "Y-m-d" (npr. "2023-07-01")
-                    $danNatjecanje = date('d', strtotime($datum));
-                    $mjesecNtjecanje = date('m', strtotime($datum));
-                    $godinaNatjecanje = date('Y', strtotime($datum));
+          
+                foreach ( $natjecanjaList as $natjecanje ) {
+                    $datumNatjecanje = $natjecanje[2]; 
+                    $danNatjecanje = date('d', strtotime($datumNatjecanje));
+                    $mjesecNatjecanje = date('m', strtotime($datumNatjecanje));
+                    $godinaNatjecanje = date('Y', strtotime($datumNatjecanje));
                     
                      if ($danNatjecanje == $dayCount && $mjesecNatjecanje == $month && $godinaNatjecanje == $year) {
-                        echo $natjecanje.ime;
+                        echo '<br>' . $natjecanje[3];
                     }
-               }*/
+               }
 
                echo '</td>';
 
@@ -95,6 +95,7 @@
     echo '</table>';
 ?>
 </form>
+</div>
 
 
 <?php require_once __SITE_PATH . '/view/_footer.php'; ?>

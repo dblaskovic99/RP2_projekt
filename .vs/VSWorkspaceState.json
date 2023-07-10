@@ -2,11 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\database",
     "\\controller",
     "\\CSS",
     "\\model",
     "\\view"
   ],
-  "SelectedNode": "\\view\\kalendarSportas_index.php",
+  "SelectedNode": "\\app\\database\\create_tables.php",
   "PreviewInSolutionExplorer": false
 }
