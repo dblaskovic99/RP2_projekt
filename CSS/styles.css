@@ -1,381 +1,405 @@
 body {
-    font-family: Arial, sans-serif;
-    background-image: url('rowing.jpg');
-    margin: 0;
-    padding: 0;
-  }
-  
-  .header {
-    background-color: #47381B;
-    padding: 10px 0;
-    color: #fff;
-    text-align: center;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-  }
-  
-  #main-menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: #f1f1f1;
-    display: flex;
-    justify-content: space-around;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-  }
-  
-  #main-menu ul li a {
-    display: block;
-    color: #47381B;
-    padding: 14px 20px;
-    text-decoration: none;
-  }
-  
-  #main-menu ul li a:hover {
-    background-color: #47381B;
-    color: #fff;
-    transition: 0.3s;
-  }
-
-  #main-menu ul li a.active {
-    background-color: #F8B64B;
-    color: #47381B;
-  }
-
-  h1 {
-    margin: 0;
-  }
-
-  .login-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 0 20px;
-  }
-  
-  .login-container {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-  }
-  
-  .login-container h1 {
-    text-align: center;
-    color: #47381B;
-    margin-bottom: 20px;
-  }
-  
-  .submit-button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #F8B64B;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .submit-button:hover {
-    background-color: #F8B64B;
-  }
-  
-  .notification {
-    border: 1px solid #47381B;
-    background-color: #FFEAAB;
-    padding: 20px;
-    margin: 10px auto;
-    width: 20%;
-    text-align: center;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
-    border-radius: 5px;
+  font-family: Arial, sans-serif;
+  background-image: url('rowing.jpg');
+  margin: 0;
+  padding: 0;
 }
 
-.trening-info {
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
-  width: 90%;
-  margin: 20px auto;
-  overflow: auto;
-}
-
-.trening-info table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-.trening-info table, .trening-info table th, .trening-info table td {
-  border: 1px solid #ccc;
-  padding: 10px;
+.header {
+  background-color: #47381B;
+  padding: 10px 0;
+  color: #fff;
   text-align: center;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
-.trening-info table th {
+#main-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: space-around;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+#main-menu ul li a {
+  display: block;
+  color: #47381B;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+#main-menu ul li a:hover {
+  background-color: #47381B;
+  color: #fff;
+  transition: 0.3s;
+}
+
+#main-menu ul li a.active {
   background-color: #F8B64B;
-  color: white;
+  color: #47381B;
 }
 
-.trening-info table tr:nth-child(even) {
-  background-color: #f2f2f2;
+h1 {
+  margin: 0;
 }
 
-.trening-info table button {
-  padding: 5px 10px;
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 20px;
+}
+
+.login-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+.login-container h1 {
+  text-align: center;
+  color: #47381B;
+  margin-bottom: 20px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
   border: none;
   border-radius: 5px;
   background-color: #F8B64B;
   color: white;
+  font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.trening-info table button:hover {
+.submit-button:hover {
   background-color: #F8B64B;
+}
+
+.notification {
+  border: 1px solid #47381B;
+  background-color: #FFEAAB;
+  padding: 20px;
+  margin: 10px auto;
+  width: 20%;
+  text-align: center;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+  border-radius: 5px;
+}
+
+.trening-info {
+padding: 20px;
+background-color: #f9f9f9;
+border-radius: 8px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+width: 90%;
+margin: 20px auto;
+overflow: auto;
+}
+
+.trening-info table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+
+.trening-info table, .trening-info table th, .trening-info table td {
+border: 1px solid #ccc;
+padding: 10px;
+text-align: center;
+}
+
+.trening-info table th {
+background-color: #F8B64B;
+color: white;
+}
+
+.trening-info table td.current-month {
+ background-color: #eaf6ff;
+ font-weight: bold;
+}
+
+.trening-info table tr:nth-child(even) {
+background-color: #f2f2f2;
+}
+
+.trening-info table button {
+padding: 5px 10px;
+border: none;
+border-radius: 5px;
+background-color: #F8B64B;
+color: white;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.trening-info table button:hover {
+background-color: #F8B64B;
 }
 
 .athlete-list {
-  padding: 20px;
-  background-color: rgba(255, 234, 171, 0.6);
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
-  width: 90%;
-  margin: 20px auto;
+padding: 20px;
+background-color: rgba(255, 234, 171, 0.6);
+border-radius: 8px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+width: 90%;
+margin: 20px auto;
 }
 
 .athlete-list table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
 }
 
 .athlete-list table, .athlete-list table th, .athlete-list table td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
+border: 1px solid #ccc;
+padding: 10px;
+text-align: center;
 }
 
 .athlete-list table th {
-  background-color: #F8B64B;
-  color: white;
+background-color: #F8B64B;
+color: white;
 }
 
 .athlete-list table tr:nth-child(even) {
-  background-color: #f2f2f2;
+background-color: #f2f2f2;
 }
 
 .athlete-list table a {
-  color: #47381B;
-  text-decoration: none;
+color: #47381B;
+text-decoration: none;
 }
 
 .athlete-list table a:hover {
-  color: #F8B64B;
+color: #F8B64B;
 }
 
 
 .training-form-container {
-  width: 70%;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: rgba(255, 234, 171, 0.6);
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+width: 70%;
+margin: 20px auto;
+padding: 20px;
+background-color: rgba(255, 234, 171, 0.6);
+border-radius: 8px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 
 
 .form-group {
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
+font-weight: bold;
+display: flex;
+flex-direction: column;
+margin-bottom: 15px;
 }
 
 .form-group input[type=text] {
-  color: #47381B;
-  padding: 10px;
-  box-sizing: border-box; 
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.5); /* Bijela boja sa 50% prozirnosti */
+color: #47381B;
+padding: 10px;
+box-sizing: border-box; 
+width: 100%;
+background-color: rgba(255, 255, 255, 0.5); /* Bijela boja sa 50% prozirnosti */
 }
 
 
 .form-group label {
-  display: block;
-  margin-bottom: 5px;
-  color: #47381B;
+display: block;
+margin-bottom: 5px;
+color: #47381B;
 }
 
 .form-group input {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+width: 100%;
+padding: 10px;
+border: none;
+border-radius: 5px;
+box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
 }
 
 .interval-button {
-  background-color: #F8B64B;
-  color: #47381B;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border-radius: 5px;
-  margin-right: 10px; /* Dodano za razmak između gumba */
+background-color: #F8B64B;
+color: #47381B;
+padding: 10px 20px;
+border: none;
+cursor: pointer;
+transition: background-color 0.3s ease;
+border-radius: 5px;
+margin-right: 10px; /* Dodano za razmak između gumba */
 }
 
 .interval-button:hover {
-  background-color: #47381B;
-  color: white;
+background-color: #47381B;
+color: white;
 }
 
 .checkbox-container {
-  color: #47381B;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+color: #47381B;
+display: flex;
+align-items: center;
+gap: 10px;
 }
 
 .info-container {
-  display: flex;
-  justify-content: space-between;  /* Rasporedi dva diva ravnomjerno preko cijele širine */
+display: flex;
+justify-content: space-between;  /* Rasporedi dva diva ravnomjerno preko cijele širine */
 }
 
 .sportas-info, .trening-info {
-  flex: 1;  /* Dopušta divovima da rastu i skupljaju se, zauzimajući jednaku širinu */
-  margin: 10px;  /* Dodaje malo razmaka između divova */
+flex: 1;  /* Dopušta divovima da rastu i skupljaju se, zauzimajući jednaku širinu */
+margin: 10px;  /* Dodaje malo razmaka između divova */
 }
 
 .sportas-info {
-  background-color: #F8B64B;
-  color: #47381B;
-  padding: 20px;
-  border-radius: 10px;
-  margin: 20px 0;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+background-color: #F8B64B;
+color: #47381B;
+padding: 20px;
+border-radius: 10px;
+margin: 20px 0;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
 }
 
 .sportas-info h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+font-size: 1.5em;
+margin-bottom: 10px;
 }
 
 .sportas-info ul {
-  list-style: none;
+list-style: none;
 }
 
 .sportas-info ul li {
-  font-size: 1.2em;
-  line-height: 2em;
+font-size: 1.2em;
+line-height: 2em;
 }
 
 .sportas-info ul li::before {
-  content: "\2022"; /* Dodaje bullet simbol */
-  color: #47381B; 
-  font-weight: bold;
-  display: inline-block; 
-  width: 1em; /* Kontrolira razmak između simbola i teksta */
-  margin-left: -1em; /* Pomakne simbol ulijevo */
+content: "\2022"; /* Dodaje bullet simbol */
+color: #47381B; 
+font-weight: bold;
+display: inline-block; 
+width: 1em; /* Kontrolira razmak između simbola i teksta */
+margin-left: -1em; /* Pomakne simbol ulijevo */
 }
 
 .btn.my-btn {
-  background-color: #F8B64B; 
-  color: white;
+background-color: #F8B64B; 
+color: white;
 }
-
-/* mislim da sam ovo stavila za kalendar */
-table {
-    margin: 0 auto;
-    width: 90%;
-    max-width: 800px;
-    border-collapse: collapse;
-    background-color: transparent;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-th,
-td {
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #cccccc;
-}
-
-th {
-    background-color: #f9f9f9;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-td.current-month {
-    background-color: #eaf6ff;
-    font-weight: bold;
-}
-
-a {
-    text-decoration: none;
-    color: #333333;
-}
-
-a:hover {
-        text-decoration: underline;
-}
-/* do ovdje je kalendar */
 
 .obavijest {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 2em auto; 
-  max-width: 400px;
-  padding: 1em;
-  background-color: #f0f0f0;
-  border-radius: 8px;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 2em auto; 
+max-width: 400px;
+padding: 1em;
+background-color: rgba(255, 234, 171, 0.6);
+border-radius: 8px;
 }
 .obavijest label {
-  margin-bottom: 0.5em;
-  font-weight: bold;
+margin-bottom: 0.5em;
+font-weight: bold;
 }
 .obavijest textarea {
-  width: 100%;
-  min-height: 100px;
-  margin-bottom: 1em;
-  padding: 0.5em;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+width: 100%;
+min-height: 100px;
+margin-bottom: 1em;
+padding: 0.5em;
+border: 1px solid #ddd;
+border-radius: 4px;
 }
 .obavijest input[type="submit"] {
-  padding: 0.5em 1em;
-  border: none;
-  background-color: #007bff;
-  color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
+padding: 0.5em 1em;
+border: none;
+background-color: #F8B64B;
+color: #fff;
+border-radius: 4px;
+cursor: pointer;
 }
 .obavijest input[type="submit"]:hover {
-  background-color: #47381B;
+background-color: #47381B;
+}
+.obavijest-container {
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 20px 0;
+  background-color:  rgba(255, 234, 171, 0.6);
 }
 .obavijest-box {
-  margin: 1em 0;
-  padding: 1em;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #f9f9f9;
+  border-radius: 15px;
+  padding: 10px;
+  background-color:  rgba(255, 234, 171, 0.9);
+  border-bottom: 1px solid #EEE;
 }
 .obavijest-box p {
-  margin: 0.5em 0;
+  color: #333;
+  line-height: 1.6;
 }
 .obavijest-box .date {
-  color: #aaa;
-  font-size: 0.8em;
+color: #aaa;
+font-size: 0.8em;
 }
 .obavijest-box .text {
-  font-size: 1.2em;
+font-size: 1.2em;
+}
+.obavijest-box form {
+  background-color: #F9F9F9;
+  padding: 10px;
+  border-radius: 5px;
+}
+.komentar {
+  margin-top: 20px;
 }
 
+.komentar input[type=text] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #DDD;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.komentar input[type=submit] {
+  padding: 10px 20px;
+  border: none;
+  background-color: #F8B64B;
+  color: white;
+  cursor: pointer;
+}
+
+.komentar input[type=submit]:hover {
+  background-color: #47381B;;
+}
+.komentar-box {
+  padding: 10px;
+}
+
+.prikazi-komentare {
+  color: #ffffff;
+  background-color: #F8B64B;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.prikazi-komentare:hover {
+  background-color: #47381B;
+  color: white;
+}

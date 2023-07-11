@@ -24,5 +24,19 @@ class obavijestiTrenerController extends BaseController
             header('Location: index.php?rt=obavijestiTrener/index');
         }
     }
+    public function dodajKomentar() 
+    {
+        if(isset($_POST['komentar'], $_POST['id_obavijesti']))
+        {
+            $service = new Service();
+            $service->noviKomentar($_POST['id_obavijesti'], $_SESSION['username'], $_POST['komentar']);
+
+            header('Location: index.php?rt=obavijestiTrener/index');
+        }
+    }
+
+    
+
+
 }
 ?>

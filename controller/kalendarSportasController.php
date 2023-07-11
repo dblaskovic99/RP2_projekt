@@ -24,18 +24,18 @@ class kalendarSportasController extends BaseController
         } 
         
         else {
-        // Inaèe postavljamo trenutni mjesec i godinu
+        // Inaï¿½e postavljamo trenutni mjesec i godinu
             $currentDate = strtotime(date('Y-m-d'));
             $currentMonth = date('m', $currentDate);
             $currentYear = date('Y', $currentDate);
         }
         
         // Popuni template potrebnim podacima
-		$this->registry->template->treningList = $ls->getNeodradeneTreninge($id_sportas);
-        $this->registry->template->natjecanjaList = $ls->getBuducaNatjecanja($id_sportas);
+		$this->registry->template->sviTreninziList = $ls->getSveTreninge($id_sportas);
+        $this->registry->template->svaNatjecanjaList = $ls->getBuducaNatjecanja($id_sportas);
         $this->registry->template->month = $currentMonth;
         $this->registry->template->year = $currentYear;
-		$this->registry->template->title = 'Kalendar dogaðaja.';
+		$this->registry->template->title = 'Kalendar dogaï¿½aja.';
 		$this->registry->template->show( 'kalendarSportas_index' );
 	}
     
