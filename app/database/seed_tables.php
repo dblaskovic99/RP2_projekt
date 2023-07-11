@@ -45,13 +45,13 @@ function seed_table_klub()
 	{
 		$st = $db->prepare( 'INSERT INTO klub(id_sport, ime_kluba, grad, drzava) VALUES (:id_sport, :ime_kluba, :grad, :drzava)' );
 
-		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Jadran', 'grad' => 'Zadar', 'drzava' => 'Hrvatska') );
-		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Gusar', 'grad' => 'Split', 'drzava' => 'Hrvatska') );
-		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Krka', 'grad' => 'Šibenik', 'drzava' => 'Hrvatska') );
-		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Mladost', 'grad' => 'Zagreb', 'drzava' => 'Hrvatska') );
-		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Trešnjevka', 'grad' => 'Zagreb', 'drzava' => 'Hrvatska') );
-		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Iktus', 'grad' => 'Osijek', 'drzava' => 'Hrvatska') );
-		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Vukovar', 'grad' => 'Vukovar', 'drzava' => 'Hrvatska') );
+		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Jadran', 'grad' => 'Zadar', 'drzava' => 'Hrvatska', '1x SŽ' => '10:00', '2x SŽ' => '8:00', '1x SM' => '8:00', '2x SM' => '6:00') );
+		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Gusar', 'grad' => 'Split', 'drzava' => 'Hrvatska', '1x SŽ' => '9:30', '2x SŽ' => '7:50', '1x SM' => '8', '2x SM' => '6:30') );
+		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Krka', 'grad' => 'Šibenik', 'drzava' => 'Hrvatska', '1x SŽ' => '9:09', '2x SŽ' => '', '1x SM' => '8', '2x SM' => '6') );
+		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Mladost', 'grad' => 'Zagreb', 'drzava' => 'Hrvatska', '1x SŽ' => '10:20', '2x SŽ' => '8:50', '1x SM' => '8:10', '2x SM' => '6:30') );
+		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Trešnjevka', 'grad' => 'Zagreb', 'drzava' => 'Hrvatska', '1x SŽ' => '9:48', '2x SŽ' => '8:20', '1x SM' => '8:01', '2x SM' => '6:45') );
+		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Iktus', 'grad' => 'Osijek', 'drzava' => 'Hrvatska', '1x SŽ' => '10:20', '2x SŽ' => '8:15', '1x SM' => '8:05', '2x SM' => '6:30') );
+		$st->execute( array( 'id_sport'=>'1', 'ime_kluba' => 'Vukovar', 'grad' => 'Vukovar', 'drzava' => 'Hrvatska', '1x SŽ' => '10', '2x SŽ' => '7:35', '1x SM' => '7:55', '2x SM' => '5:50') );
 
 		
 	}

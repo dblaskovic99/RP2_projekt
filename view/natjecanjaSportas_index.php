@@ -11,19 +11,24 @@ require_once __SITE_PATH . '/view/_headerSportas.php';
 	<div class="trening-info">
 		<h2>Buduća natjecanja</h2>
 		<table>
-			<tr><th>Datum</th><th>Ime</th><th>Lokacija</th><th>Disciplina</th>
+			<tr><th>Datum</th><th>Ime</th><th>Lokacija</th><th>Disciplina</th><th>Rezultat</th>
 			<?php 
-
-				for($i=0; $i<Count($natjecanjaList); $i++){
-					
-
+				
+                for($i=0; $i<Count($natjecanjaList); $i++){
+					echo '<form method="post" action="' . __SITE_URL .'/index.php?rt=odradiNatjecanjeSportas&id_natjecanje=' . $natjecanjaList[$i][0] . '">';
 					
 					echo '<tr>' .
 					'<td>' . $natjecanjaList[$i][2] . '</td>' .
 					'<td>' . $natjecanjaList[$i][3] . '</td>' .
 					'<td>' . $natjecanjaList[$i][4] . '</td>' .
-                    '<td>' . $natjecanjaList[$i][5] . '</td>' .
+                    '<td>' . $natjecanjaList[$i][5] . '</td>';
 
+                    if ($natjecanjaList[$i][6] == NULL)
+                        echo '<td><input type="text" name="rezultat" /></td>';
+                    else 
+                        echo '<td>' . $natjecanjaList[$i][6] . '</td>';
+                    
+                    echo '<td><input type="submit">Spremi natjecanje!</input></td>' .
 					'</tr>';
 					echo '</form>';
 

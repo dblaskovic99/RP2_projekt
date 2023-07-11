@@ -361,45 +361,52 @@ font-size: 1.2em;
   margin-top: 20px;
 }
 
-.komentar input[type=text] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #DDD;
-  border-radius: 5px;
-  margin-bottom: 10px;
+.ocjena-skala {
+    display: flex;
 }
 
-.komentar input[type=submit] {
-  padding: 10px 20px;
-  border: none;
-  background-color: #F8B64B;
-  color: white;
-  cursor: pointer;
+    .ocjena-skala input[type="radio"] {
+        appearance: none;
+        margin: 0;
+        padding: 0;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border: 1px solid #ccc;
+    }
+
+        .ocjena-skala input[type="radio"]:checked {
+            background-color: #ccc;
+        }
+
+#ocjena1:checked ~ #ocjena1-label {
+    background-color: gray;
 }
 
-.komentar input[type=submit]:hover {
-  background-color: #47381B;;
-}
-.komentar-box {
-  padding: 10px;
+#ocjena2:checked ~ #ocjena2-label {
+    background-color: blue;
 }
 
-.prikazi-komentare {
-  color: #ffffff;
-  background-color: #F8B64B;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  border-radius: 12px;
+#ocjena3:checked ~ #ocjena3-label {
+    background-color: green;
 }
 
-.prikazi-komentare:hover {
-  background-color: #47381B;
-  color: white;
+#ocjena4:checked ~ #ocjena4-label {
+    background-color: orange;
 }
+
+#ocjena5:checked ~ #ocjena5-label {
+    background-color: red;
+}
+
+.ocjena-skala label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+    .ocjena-skala label:hover {
+        opacity: 0.7;
+    }

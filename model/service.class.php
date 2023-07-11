@@ -187,6 +187,20 @@ class Service{
 
 	}
 
+	function odradiNatjecanje($id_natjecanje, $rezultat){
+		$db = DB::getConnection();
+		try{
+			$st = $db->prepare('UPDATE natjecanje SET rezultat = :rezultat WHERE id_natjecanje = :id_natjecanje');
+			$st->execute (array('id_natjecanje' => $id_natjecanje,
+									'rezultat' => $rezultat));
+		}
+		catch( PDOException $e ){
+			echo 'Greska u Service.class.php!';
+			return 0;
+		}
+
+	}
+
 	function dodajTreningTrener($id_sportas, $datum, $vrsta, $ime, $interval1, $interval2, $interval3, $interval4, $interval5, $interval6, $interval7, $interval8, $interval9, $interval10){
 		$db = DB::getConnection();
 		try{
@@ -217,8 +231,8 @@ class Service{
 	function dodajNatjecanjeTrener($id_sportas, $datum, $ime, $lokacija, $disciplina){
 		$db = DB::getConnection();
 		try{
-			$st = $db->prepare('INSERT INTO natjecanje(id_sportas, datum, ime, lokacija, disciplina) VALUES '.
-								'(:id_sportas, :datum, :ime, :lokacija, :disciplina)');
+			$st = $db->prepare('INSERT INTO natjecanje(id_sportas, datum, ime, lokacija, disciplina, rezultat) VALUES '.
+								'(:id_sportas, :datum, :ime, :lokacija, :disciplina, 0)');
 			$st->execute (array('id_sportas' => $id_sportas,
 									'datum' => $datum,
 									'ime' => $ime, 

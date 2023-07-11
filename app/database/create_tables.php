@@ -59,28 +59,33 @@ function create_table_sport()
 
 function create_table_klub()
 {
-	$db = DB::getConnection();
+    $db = DB::getConnection();
 
-	if( has_table( 'klub' ) )
-		exit( 'Tablica klub vec postoji. Obrisite ju pa probajte ponovno.' );
+    if( has_table( 'klub' ) )
+        exit( 'Tablica klub vec postoji. Obrisite ju pa probajte ponovno.' );
 
-	try
-	{
-		$st = $db->prepare( 
-			'CREATE TABLE IF NOT EXISTS klub (' .
-			'id_klub int NOT NULL PRIMARY KEY AUTO_INCREMENT,' .
-			'id_sport int NOT NULL,' .
+    try
+    {
+        $st = $db->prepare( 
+            'CREATE TABLE IF NOT EXISTS klub (' .
+            'id_klub int NOT NULL PRIMARY KEY AUTO_INCREMENT,' .
+            'id_sport int NOT NULL,' .
             'ime_kluba varchar(100) NOT NULL,' .
-			'grad varchar(100),' .
-            'drzava varchar(100))'
-		);
+            'grad varchar(100),' .
+            'drzava varchar(100),' .
+            '1x SŽ varchar(5),' .
+            '2x SŽ varchar(5),' .
+            '1x MŽ varchar(5),' .
+            '2x MŽ varchar(5))'
+        );
 
-		$st->execute();
-	}
-	catch( PDOException $e ) { exit( "PDO error [create klub]: " . $e->getMessage() ); }
+        $st->execute();
+    }
+    catch( PDOException $e ) { exit( "PDO error [create klub]: " . $e->getMessage() ); }
 
-	echo "Napravio tablicu klub.<br />";
+    echo "Napravio tablicu klub.<br />";
 }
+
 
 function create_table_trener()
 {
