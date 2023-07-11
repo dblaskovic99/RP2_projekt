@@ -11,6 +11,7 @@ class natjecanjaSportasController extends BaseController
 		$id_sportas=$sportas->id_sportas;
 		// Popuni template potrebnim podacima
 		$this->registry->template->natjecanjaList = $ls->getBuducaNatjecanja($id_sportas);
+		$this->registry->template->popup = 0;
 		
         $this->registry->template->show( 'natjecanjaSportas_index' );
 	}

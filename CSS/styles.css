@@ -361,52 +361,21 @@ font-size: 1.2em;
   margin-top: 20px;
 }
 
-.ocjena-skala {
-    display: flex;
+/* popup window style */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
 }
 
-    .ocjena-skala input[type="radio"] {
-        appearance: none;
-        margin: 0;
-        padding: 0;
-        width: 20px;
-        height: 20px;
-        background-color: transparent;
-        border: 1px solid #ccc;
+    .popup.active {
+        display: block;
     }
 
-        .ocjena-skala input[type="radio"]:checked {
-            background-color: #ccc;
-        }
-
-#ocjena1:checked ~ #ocjena1-label {
-    background-color: gray;
-}
-
-#ocjena2:checked ~ #ocjena2-label {
-    background-color: blue;
-}
-
-#ocjena3:checked ~ #ocjena3-label {
-    background-color: green;
-}
-
-#ocjena4:checked ~ #ocjena4-label {
-    background-color: orange;
-}
-
-#ocjena5:checked ~ #ocjena5-label {
-    background-color: red;
-}
-
-.ocjena-skala label {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-    .ocjena-skala label:hover {
-        opacity: 0.7;
-    }

@@ -2,6 +2,10 @@
 $activePage = 'natjecanjaSportas';
 require_once __SITE_PATH . '/view/_headerSportas.php';
 ?>
+    <div class="popup <?php if ($popup == 1) echo 'active'; ?>">
+        <p><?php echo $natpis; ?></p>
+        <button onclick="closePopup()">Zatvori</button>
+    </div>
 
     <div class="trening-info" id="odbrojavanje">
         <h2>Odbrojavanje do prvog natjecanja</h2>
@@ -24,12 +28,13 @@ require_once __SITE_PATH . '/view/_headerSportas.php';
                     '<td>' . $natjecanjaList[$i][5] . '</td>';
 
                     if ($natjecanjaList[$i][6] == NULL)
-                        echo '<td><input type="text" name="rezultat" /></td>';
+                        echo '<td><input type="text" name="rezultat" /></td>' .
+                             '<td><input type="submit">Spremi natjecanje!</input></td>';
                     else 
                         echo '<td>' . $natjecanjaList[$i][6] . '</td>';
                     
-                    echo '<td><input type="submit">Spremi natjecanje!</input></td>' .
-					'</tr>';
+                    
+					echo '</tr>';
 					echo '</form>';
 
 				}
@@ -41,6 +46,10 @@ require_once __SITE_PATH . '/view/_headerSportas.php';
 	</div>
    
     <script>
+    function closePopup() {
+        document.querySelector('.popup').classList.remove('active');
+    }
+
    document.addEventListener("DOMContentLoaded", function() {
     // Dohvati datume natjecanja iz PHP-a i spremi ih u JavaScript polje
     var natjecanja = <?php echo json_encode($natjecanjaList); ?>;

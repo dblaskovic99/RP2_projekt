@@ -38,7 +38,6 @@ class Service{
 			$row['password_hash'], $row['ime'], $row['prezime'],
 			$row['datum_rodenja'], $row['kategorija'], $row['id_trener'] ,
 			$row['id_klub'], $row['registration_sequence'], $row['has_registered']);
-
 	}
 
 
@@ -148,6 +147,20 @@ class Service{
 		return $trening;
 	}
 
+	function getNatjecanjePoID($id_natjecanje)
+	{
+		try {
+			$db = DB::getConnection();
+			$st = $db->prepare('SELECT * FROM natjecanje WHERE id_natjecanje = :id_natjecanje');
+			$st->execute(array('id_natjecanje' => $id_natjecanje));
+		} 
+		catch (PDOException $e) {
+			exit('PDO error ' . $e->getMessage());
+		}
+		$natjecanje=$st->fetchAll();
+		return $natjecanje;
+	}
+
 	function getBuducaNatjecanja($id_sportas){
 		try {
 			$db = DB::getConnection();
@@ -200,6 +213,81 @@ class Service{
 		}
 
 	}
+
+	function azuriraj1xSZ($id_klub, $noviRezultat) {
+    $db = DB::getConnection();
+    try {
+        $st = $db->prepare('UPDATE klub SET `1x SZ` = :noviRezultat WHERE id_klub = :id_klub');
+        $st->execute(array('noviRezultat' => $noviRezultat, 'id_klub' => $id_klub));
+    } 
+    catch (PDOException $e) {
+        echo 'Greška prilikom ažuriranja rezultata kluba!';
+        return false;
+    }
+
+    return true;
+	}
+
+
+	function azuriraj2xSZ($id_klub, $noviRezultat) {
+    $db = DB::getConnection();
+    try {
+        $st = $db->prepare('UPDATE klub SET `2x SZ` = :noviRezultat WHERE id_klub = :id_klub');
+        $st->execute(array('noviRezultat' => $noviRezultat, 'id_klub' => $id_klub));
+    } 
+    catch (PDOException $e) {
+        echo 'Greška prilikom ažuriranja rezultata kluba!';
+        return false;
+    }
+
+    return true;
+}
+
+
+	function azuriraj1xSM($id_klub, $noviRezultat) {
+    $db = DB::getConnection();
+    try {
+        $st = $db->prepare('UPDATE klub SET `1x SM` = :noviRezultat WHERE id_klub = :id_klub');
+        $st->execute(array('noviRezultat' => $noviRezultat, 'id_klub' => $id_klub));
+    } 
+    catch (PDOException $e) {
+        echo 'Greška prilikom ažuriranja rezultata kluba!';
+        return false;
+    }
+
+    return true;
+}
+
+
+	function azuriraj2xSM($id_klub, $noviRezultat) {
+    $db = DB::getConnection();
+    try {
+        $st = $db->prepare('UPDATE klub SET `2x SM` = :noviRezultat WHERE id_klub = :id_klub');
+        $st->execute(array('noviRezultat' => $noviRezultat, 'id_klub' => $id_klub));
+    } 
+    catch (PDOException $e) {
+        echo 'Greška prilikom ažuriranja rezultata kluba!';
+        return false;
+    }
+
+    return true;
+}
+
+
+	function getKlubByID($id_klub) {
+    $db = DB::getConnection();
+    try {
+        $st = $db->prepare('SELECT * FROM klub WHERE id_klub = :id_klub');
+        $st->execute(array('id_klub' => $id_klub));
+        $rezultat = $st->fetch(PDO::FETCH_ASSOC);
+        return $rezultat;
+    } catch (PDOException $e) {
+        echo 'Greška prilikom dohvaćanja rezultata kluba!';
+        return null;
+    }
+	}
+
+
 
 	function dodajTreningTrener($id_sportas, $datum, $vrsta, $ime, $interval1, $interval2, $interval3, $interval4, $interval5, $interval6, $interval7, $interval8, $interval9, $interval10){
 		$db = DB::getConnection();
