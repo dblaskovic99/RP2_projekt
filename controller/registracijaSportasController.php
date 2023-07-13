@@ -1,6 +1,6 @@
 <?php 
 
-class RegistracijaSportasController extends BaseController
+class registracijaSportasController extends BaseController
 {
 	public function index() 
 	{
@@ -9,26 +9,26 @@ class RegistracijaSportasController extends BaseController
 		$rs = new Service();
         if( !isset( $_POST['username'] ) || !isset( $_POST['password'] ) )
         {
-            $this->registry->template->title = 'Unesite korisnièko ime i lozinku';
+            $this->registry->template->title = 'Unesite korisniï¿½ko ime i lozinku';
             $this->registry->template->kluboviList = $rs->generirajKlubove();
 			$this->registry->template->show( 'registracijaSportas_index' );
 
         }
         else if( !preg_match( '/^[A-Za-z]{3,10}$/', $_POST['username'] ) )
         {
-            $this->registry->template->title = 'Korisnièko ime mora imati izmeðu 3 i 10 znakova.';
+            $this->registry->template->title = 'Korisniï¿½ko ime mora imati izmeï¿½u 3 i 10 znakova.';
             $this->registry->template->kluboviList = $rs->generirajKlubove();
 			$this->registry->template->show( 'registracijaSportas_index' );
         }
         
         else
         {
-            // Provjeri jel veæ postoji taj korisnik u bazi
+            // Provjeri jel veï¿½ postoji taj korisnik u bazi
             $user = $rs->getSportasPoUsername( $_POST['username'] );
             
             if( $user !== null )
             {
-                $this->registry->template->title = 'Taj korisnik veæ postoji';
+                $this->registry->template->title = 'Taj korisnik veï¿½ postoji';
                 $this->registry->template->kluboviList = $rs->generirajKlubove();
                 $this->registry->template->show( 'registracijaSportas_index' );
             }
@@ -38,7 +38,7 @@ class RegistracijaSportasController extends BaseController
                 // Dodaj novog korisnika u bazu. Prvo mu generiraj random string od 10 znakova za registracijski link.
                 $reg_seq = '';
                 for( $i = 0; $i < 20; ++$i )
-                    $reg_seq .= chr( rand(0, 25) + ord( 'a' ) ); // Zalijepi sluèajno odabrano slovo
+                    $reg_seq .= chr( rand(0, 25) + ord( 'a' ) ); // Zalijepi sluï¿½ajno odabrano slovo
                 switch ($_POST['kategorija']) {
                     case 1:
                         $kategorija = 'kadet';

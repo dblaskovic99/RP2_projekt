@@ -4,7 +4,7 @@ class natjecanjeTrenerController extends BaseController
     public function index(){
         $ls = new Service();
         $i=0;
-        while(isset($_POST['username'][$i])) {
+        while(isset($_POST['sportasi'][$i])) {
             if (isset($_POST['datum']) && isset($_POST['ime'])) {
                 $sportas = $ls->getSportasPoUsername($_POST['username'][$i]); // changed from 0 to $i
                 $id_sportas = $sportas->id_sportas;

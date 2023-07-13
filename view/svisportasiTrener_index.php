@@ -17,7 +17,6 @@ require_once __SITE_PATH . '/view/_headerTrener.php';
 										<strong>Username:</strong> ' . $sportas->username . '<br>
 										<strong>Datum rođenja:</strong> ' . $sportas->datum_rodenja . '<br>
 										<strong>Kategorija:</strong> ' . $sportas->kategorija . '<br>
-										<strong>Klub:</strong> ' . $sportas->id_kluba . '
 									</p>
 									<a href="' . __SITE_URL .'/index.php?rt=sportasTrener&username=' . $sportas->username . '" class="btn my-btn">Pogledaj profil</a>
 								</div>

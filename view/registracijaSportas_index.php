@@ -1,11 +1,11 @@
 <?php 
-$activePage = 'registracijaSportas';
+$activePage = 'RegistracijaSportas';
 require_once __SITE_PATH . '/view/_header_pocetni.php'; 
 ?>
 
 <div class="registration-container">
-<form class="registration-form" method="post" action="<?php echo __SITE_URL . '/index.php?rt=registracijaSportasa'?>">
-		Odaberite korisnièko ime:
+<form class="registration-form" method="post" action="<?php echo __SITE_URL . '/index.php?rt=registracijaSportas'?>">
+		Odaberite korisniÄko ime:
 		<input type="text" name="username" />
 		<br />
 		Odaberite lozinku:
@@ -17,7 +17,7 @@ require_once __SITE_PATH . '/view/_header_pocetni.php';
 		Unesite prezime:
 		<input type="text" name="prezime" />
 		<br />
-		Datum roğenja:
+		Datum roÄ‘enja:
 		<input type="date" name="datum" />
 		<br />
 		Kategorija:
@@ -35,7 +35,7 @@ require_once __SITE_PATH . '/view/_header_pocetni.php';
 		</select>
 
 		<br />
-		<button type="submit">Stvori korisnièki raèun!</button>	
+		<button type="submit">Stvori korisniÄki raÄun!</button>	
 	</form>
 	
 </div>
