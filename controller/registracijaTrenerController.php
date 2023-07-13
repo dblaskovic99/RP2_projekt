@@ -10,11 +10,14 @@ class RegistracijaTrenerController extends BaseController
         if( !isset( $_POST['username'] ) || !isset( $_POST['password'] ) )
         {
             $this->registry->template->title = 'Unesite korisničko ime i lozinku';
+            $this->registry->template->kluboviList = $rs->generirajKlubove();
 			$this->registry->template->show( 'registracijaTrener_index' );
+
         }
         else if( !preg_match( '/^[A-Za-z]{3,10}$/', $_POST['username'] ) )
         {
             $this->registry->template->title = 'Korisničko ime mora imati između 3 i 10 znakova.';
+            $this->registry->template->kluboviList = $rs->generirajKlubove();
 			$this->registry->template->show( 'registracijaTrener_index' );
         }
         
@@ -26,6 +29,7 @@ class RegistracijaTrenerController extends BaseController
             if( $user !== null )
             {
                 $this->registry->template->title = 'Taj korisnik već postoji';
+                $this->registry->template->kluboviList = $rs->generirajKlubove();
                 $this->registry->template->show( 'registracijaTrener_index' );
             }
             else
@@ -40,11 +44,11 @@ class RegistracijaTrenerController extends BaseController
 
                 $_SESSION['username'] = $_POST['username'];
                 $trener = $rs->getTrenerPoUsername( $_POST['username'] );
-                $_SESSION['id_trener']= $trener-> id_trener;
+                $_SESSION['id_trener']= $trener->id_trener;
 
                 // Zahvali mu na prijavi.
                 $this->registry->template->title = 'Hvala Vam na registraciji!';
-                $this->registry->template->show( 'loggedTrener_in' );
+                $this->registry->template->show( 'logged_inTrener' );
             }
         }
     }

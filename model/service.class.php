@@ -20,6 +20,22 @@ class Service{
 		return $arr;
     }
 
+	function generirajKlubove() {
+		$db = DB::getConnection();
+		$klubovi = [];
+
+		try {
+        $st = $db->prepare('SELECT id_klub, ime_kluba FROM klub');
+        $st->execute();
+        $klubovi = $st->fetchAll(PDO::FETCH_ASSOC);
+		} catch (PDOException $e) {
+        echo 'Greška prilikom dohvaćanja klubova iz baze podataka!';
+        return [];
+		}
+
+		return $klubovi;
+	}
+
     
 	function getSportasPoUsername( $username )
 	{
@@ -38,6 +54,21 @@ class Service{
 			$row['password_hash'], $row['ime'], $row['prezime'],
 			$row['datum_rodenja'], $row['kategorija'], $row['id_trener'] ,
 			$row['id_klub'], $row['registration_sequence'], $row['has_registered']);
+	}
+
+	function getTrenerPoKlubu($id_klub)
+	{
+		try {
+		$db = DB::getConnection();
+		$st = $db->prepare('SELECT * FROM trener WHERE id_klub = :id_klub');
+		$st->execute(array('id_klub' => $id_klub));
+		$treners = $st->fetchAll(PDO::FETCH_ASSOC);
+		return $treners;
+		} 
+		catch (PDOException $e) {
+		echo 'Greška prilikom dohvaćanja trenera iz baze podataka!';
+		return null;
+		}
 	}
 
 
@@ -334,20 +365,51 @@ class Service{
 
 	}
 
-	function dodajNovogTrenera( $username, $password, $ime, $prezime, $id_klub, $reg_seq )
-	{
-		try
-		{
-			$db = DB::getConnection();
-			$st = $db->prepare( 'INSERT INTO trener(username, password_hash, ime, prezime, id_klub, registration_sequence, has_registered) VALUES ' .
-								'(:username, :password_hash, :ime, :prezime, :id_klub, :registration_sequence, 1)' );
+	function dodajNovogTrenera($username, $password, $ime, $prezime, $id_klub, $reg_seq){
+		try {
+		$db = DB::getConnection();
+		$password_hash = password_hash($password, PASSWORD_DEFAULT); // Hashiranje lozinke
+		$st = $db->prepare('INSERT INTO trener(username, password_hash, ime, prezime, id_klub, registration_sequence, has_registered) VALUES ' .
+							'(:username, :password_hash, :ime, :prezime, :id_klub, :registration_sequence, 1)');
+		$st->execute(array(
+			'username' => $username,
+			'password_hash' => $password_hash,
+			'ime' => $ime,
+			'prezime' => $prezime,
+			'id_klub' => $id_klub,
+			'registration_sequence' => $reg_seq
+		));
 		}
-		
-		catch( PDOException $e ){
+		catch (PDOException $e) {
 			echo 'Greska u Service.class.php!';
 			return 0;
 		}
 	}
+
+	function dodajNovogSportasa($username, $password, $ime, $prezime, $datum, $kategorija, $trener, $id_klub, $reg_seq) {
+		try {
+        $db = DB::getConnection();
+        $password_hash = password_hash($password, PASSWORD_DEFAULT); // Hashiranje lozinke
+        $st = $db->prepare('INSERT INTO sportas(username, password_hash, ime, prezime, datum_rodenja, kategorija, id_trener, id_klub, registration_sequence, has_registered) VALUES ' .
+                            '(:username, :password_hash, :ime, :prezime, :datum_rodenja, :kategorija, :id_trener, :id_klub, :registration_sequence, 1)');
+        $st->execute(array(
+            'username' => $username,
+            'password_hash' => $password_hash,
+            'ime' => $ime,
+            'prezime' => $prezime,
+            'datum_rodenja' => $datum,
+            'kategorija' => $kategorija,
+            'id_trener' => $trener,
+            'id_klub' => $id_klub,
+            'registration_sequence' => $reg_seq
+        ));
+		}
+		catch (PDOException $e) {
+        echo 'Greska u Service.class.php!';
+        return 0;
+		}
+	}
+
 
 	function getMax500m($id_sportas){
 		try {
