@@ -29,7 +29,7 @@ require_once __SITE_PATH . '/view/_headerSportas.php';
 
                     if ($natjecanjaList[$i][6] == NULL)
                         echo '<td><input type="text" name="rezultat" /></td>' .
-                             '<td><input type="submit">Spremi natjecanje!</input></td>';
+                             '<td><input type="submit" value="Spremi natjecanje!"></input></td>';
                     else 
                         echo '<td>' . $natjecanjaList[$i][6] . '</td>';
                     

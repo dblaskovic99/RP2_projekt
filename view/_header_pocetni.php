@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf8">
 	<link rel="stylesheet" type="text/css" href="CSS/styles.css">
+	<link rel="icon" type="image/x-icon" href="CSS/icon.ico">
 	<title>Moj trening</title>
 </head>
 <body>

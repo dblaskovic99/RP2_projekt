@@ -1,5 +1,5 @@
 <?php 
-$activePage = 'RegistracijaSportas';
+$activePage = 'registracijaSportas';
 require_once __SITE_PATH . '/view/_header_pocetni.php'; 
 ?>
 

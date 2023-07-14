@@ -27,7 +27,7 @@ require_once __SITE_PATH . '/view/_headerSportas.php'; ?>
 					'<td><input type="text" name="rez_interval4" /></td>' .
 					'<td>' . $treningList[$i][14] . '</td>' .
 					'<td><input type="text" name="rez_interval5" /></td>' .
-					'<td><input type="submit">Spremi trening!</input></td>' .
+					'<td><input type="submit" value="Spremi trening!"> </input></td>' .
 
 					'</tr>';
 					echo '</form>';
