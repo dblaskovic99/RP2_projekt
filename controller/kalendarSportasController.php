@@ -9,7 +9,7 @@ class kalendarSportasController extends BaseController
 		$sportas=$ls->getSportasPoUsername($_SESSION['username']);
 		$id_sportas=$sportas->id_sportas;
 
-        // Kontroler koji prikazuje kalendar natjecanja i treninga
+        // Je li pritisnut gumb prethodni/sljedeći?
 		 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
              
             if (isset($_POST['prevMonth'], $_POST['prevYear']) && isset($_POST['previous'])) {
@@ -24,7 +24,7 @@ class kalendarSportasController extends BaseController
         } 
         
         else {
-        // Ina�e postavljamo trenutni mjesec i godinu
+        // Inače postavljamo trenutni mjesec i godinu
             $currentDate = strtotime(date('Y-m-d'));
             $currentMonth = date('m', $currentDate);
             $currentYear = date('Y', $currentDate);
@@ -35,7 +35,7 @@ class kalendarSportasController extends BaseController
         $this->registry->template->svaNatjecanjaList = $ls->getBuducaNatjecanja($id_sportas);
         $this->registry->template->month = $currentMonth;
         $this->registry->template->year = $currentYear;
-		$this->registry->template->title = 'Kalendar doga�aja.';
+		$this->registry->template->title = 'Kalendar događaja.';
 		$this->registry->template->show( 'kalendarSportas_index' );
 	}
     

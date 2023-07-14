@@ -14,7 +14,7 @@ require_once __SITE_PATH . '/view/_headerSportas.php';
     $prevMonth = date('m', strtotime('-1 month', strtotime($year . '-' . $month . '-01')));
     $prevYear = date('Y', strtotime('-1 month', strtotime($year . '-' . $month . '-01')));
     
-    // Sljede�i mjesec i godina
+    // Sljedeći mjesec i godina
     $nextMonth = date('m', strtotime('+1 month', strtotime($year . '-' . $month . '-01')));
     $nextYear = date('Y', strtotime('+1 month', strtotime($year . '-' . $month . '-01')));
     ?>
@@ -41,11 +41,10 @@ require_once __SITE_PATH . '/view/_headerSportas.php';
     
     // Broj redova u tablici
     $numRows = ceil(($numDays + $firstDay - 1) / 7);
-    
-    // Broja� dana
+
     $dayCount = 1;
     
-    // Kreiranje redova i �elija za svaki dan
+    // Kreiranje redova i čelija za svaki dan
     for ($row = 1; $row <= $numRows; $row++) {
     echo '<tr>';
     for ($col = 1; $col <= 7; $col++) {
@@ -54,6 +53,7 @@ require_once __SITE_PATH . '/view/_headerSportas.php';
                 echo '<td></td>';
             } 
             else {
+                // Ispisuje li se današnji datum?
                 if ($dayCount == date('j') && $month == date('m') && $year == date('Y')) {
                     echo '<td class="current-month">' . $dayCount;
                 } 

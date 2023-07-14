@@ -23,7 +23,7 @@ class registracijaSportasController extends BaseController
         
         else
         {
-            // Provjeri jel ve� postoji taj korisnik u bazi
+            // Provjeri jel već postoji taj korisnik u bazi
             $user = $rs->getSportasPoUsername( $_POST['username'] );
             
             if( $user !== null )
@@ -38,7 +38,7 @@ class registracijaSportasController extends BaseController
                 // Dodaj novog korisnika u bazu. Prvo mu generiraj random string od 10 znakova za registracijski link.
                 $reg_seq = '';
                 for( $i = 0; $i < 20; ++$i )
-                    $reg_seq .= chr( rand(0, 25) + ord( 'a' ) ); // Zalijepi slu�ajno odabrano slovo
+                    $reg_seq .= chr( rand(0, 25) + ord( 'a' ) ); // Zalijepi slučajno odabrano slovo
                 switch ($_POST['kategorija']) {
                     case 1:
                         $kategorija = 'kadet';

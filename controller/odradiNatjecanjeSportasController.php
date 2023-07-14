@@ -8,6 +8,7 @@ class odradiNatjecanjeSportasController extends BaseController
         if(isset($_POST['rezultat'])){
             $id_natjecanje = $_GET['id_natjecanje'];
             $noviRezultat = $_POST['rezultat'];
+            // Zapisivanje rezultata natjecanja u bazu
             $ls->odradiNatjecanje($id_natjecanje, $noviRezultat);
 
             $natjecanje = $ls->getNatjecanjePoID($id_natjecanje);
@@ -17,8 +18,10 @@ class odradiNatjecanjeSportasController extends BaseController
             
             list($noveMinute, $noveSekunde) = explode(':', $noviRezultat);
 
-            // Provjeri disciplinu natjecanja
+            // Provjera discipline natjecanja
             $disciplina = $natjecanje[0]['disciplina'];
+
+            // Provjera jeli uenseni rezultat klupski rekord
             switch ($disciplina) {
                 case '1x SZ':
                     $trenutniRezultat = $klub['1x SZ'];
