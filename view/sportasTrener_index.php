@@ -2,29 +2,31 @@
 $activePage = 'loginTrener';
 require_once __SITE_PATH . '/view/_headerTrener.php'; ?>
 
+<div class="row sportas-info">
+    <div class="col-md-6">
+        <h2><strong>Podaci o korisniku:</strong></h2>
 
-	<div class="sportas-info">
-		<h2>Podaci o korisniku:</h2>
+        <ul>
+            <li><strong>Username:</strong> <?php echo $sportas->username; ?></li>
+            <li><strong>Ime:</strong> <?php echo $sportas->ime; ?></li>
+            <li><strong>Prezime:</strong> <?php echo $sportas->prezime; ?></li>
+            <li><strong>Datum rođenja:</strong> <?php echo $sportas->datum_rodenja; ?></li>
+            <li><strong>Kategorija:</strong> <?php echo $sportas->kategorija; ?></li>
+        </ul>
+    </div>
 
-		<ul>
-			<li>username: <?php echo $sportas->username; ?></li>
-			<li>ime: <?php echo $sportas->ime; ?></li>
-			<li>prezime: <?php echo $sportas->prezime; ?></li>
-			<li>datum rođenja: <?php echo $sportas->datum_rodenja; ?></li>
-			<li>kategorija: <?php echo $sportas->kategorija; ?></li>
-			
-		</ul>
-		<h2>Rekordi: </h2>
-		<?php 
-			echo 'najboljih 500m:' . $max500m; echo '<br>';
-			echo 'najboljih 1000m:' . $max1000m; echo '<br>';
-			echo 'najboljih 2000m:' . $max2000m; echo '<br>';
-			echo 'najboljih 6000m:' . $max6000m; echo '<br>';
-			echo 'najboljih 30min:' . $max30min;
-			
-		?>
+    <div class="col-md-6">
+        <h2><strong>Rekordi:</strong></h2>
+        <ul>
+            <li><strong>Najboljih 500m:</strong> <?php echo $max500m; ?></li>
+            <li><strong>Najboljih 1000m:</strong> <?php echo $max1000m; ?></li>
+            <li><strong>Najboljih 2000m:</strong> <?php echo $max2000m; ?></li>
+            <li><strong>Najboljih 6000m:</strong> <?php echo $max6000m; ?></li>
+            <li><strong>Najboljih 30min:</strong> <?php echo $max30min; ?></li>
+        </ul>
+    </div>
+</div>
 
-	</div>
 		
 	<div class="trening-info">
 	<h1>Zadnji odrađeni treninzi:</h1>

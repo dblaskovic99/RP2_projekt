@@ -15,7 +15,7 @@ require_once __SITE_PATH . '/view/_headerSportas.php';
 	<div class="trening-info">
 		<h2>Buduća natjecanja</h2>
 		<table>
-			<tr><th>Datum</th><th>Ime</th><th>Lokacija</th><th>Disciplina</th><th>Rezultat</th>
+			<tr><th>Datum</th><th>Ime</th><th>Lokacija</th><th>Disciplina</th><th>Rezultat</th><th></th>
 			<?php 
 				
                 for($i=0; $i<Count($natjecanjaList); $i++){
@@ -66,27 +66,20 @@ require_once __SITE_PATH . '/view/_headerSportas.php';
         }
     }
 
-    // Update the count down every 1 second
     var x = setInterval(function() {
-        // Get today's date and time
         var now = new Date().getTime();
 
-        // Find the distance between now and the closest date
         var distance = closestDate - now;
 
-        // Time calculations for days, hours, minutes and seconds
         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-       // Combine the event name and countdown into one string
         var countdownText = closestEvent + " za: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 
-        // Output the result in an element with id="countdown"
         document.getElementById("countdown").innerHTML = countdownText;
 
-        // If the count down is over, write some text 
         if (distance < 0) {
             clearInterval(x);
             document.getElementById("countdown").innerHTML = "EXPIRED";

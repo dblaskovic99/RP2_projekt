@@ -6,7 +6,7 @@ require_once __SITE_PATH . '/view/_headerSportas.php'; ?>
 	<div class="trening-info">
 		<h2>Popis neodrađenih treninga:</h2>
 		<table>
-			<tr><th>Vrsta</th><th>Ime</th><th> 1 </th><th> Rezultat 1 </th><th> 2</th><th> Rezultat 2 </th><th> 3</th><th> Rezultat 3 </th><th> 4</th><th> Rezultat 4 </th><th> 5</th><th> Rezultat 5 </th><th> Intenzitet </th>
+			<tr><th>Vrsta</th><th>Ime</th><th> 1 </th><th> Rezultat 1 </th><th> 2</th><th> Rezultat 2 </th><th> 3</th><th> Rezultat 3 </th><th> 4</th><th> Rezultat 4 </th><th> 5</th><th> Rezultat 5 </th><th></th>
 			<?php 
 
 				for($i=0; $i<Count($treningList); $i++){

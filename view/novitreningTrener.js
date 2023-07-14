@@ -1,7 +1,7 @@
 let intervalCount = 1;
 
 document.getElementById('addInterval').addEventListener('click', function() {
-    if(intervalCount < 10) {
+    if(intervalCount < 5) {
         intervalCount++;
         let newInterval = document.createElement('div');
         newInterval.classList.add('form-group', 'interval-group');

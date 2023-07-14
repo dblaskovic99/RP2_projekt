@@ -323,11 +323,11 @@ justify-content: space-between;  /* Rasporedi dva diva ravnomjerno preko cijele 
 
 .sportas-info, .trening-info {
 flex: 1;  /* Dopušta divovima da rastu i skupljaju se, zauzimajući jednaku širinu */
-margin: 10px;  /* Dodaje malo razmaka između divova */
+width: 100vw;
 }
 
 .sportas-info {
-background-color: #F8B64B;
+background-color: rgba(255, 234, 171, 0.7);
 color: #47381B;
 padding: 20px;
 border-radius: 10px;
@@ -431,19 +431,19 @@ font-size: 1.2em;
 
 /* popup window style */
 .popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff;
-    padding: 20px;
-    border: 1px solid #cccccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 9999;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
 }
 
-    .popup.active {
-        display: block;
-    }
+.popup.active {
+  display: block;
+}
 
